@@ -1,0 +1,13 @@
+[
+  {
+    "module": "认证管理",
+    "function_name": "用户登录",
+    "level1": "身份认证",
+    "level2": "账号密码认证",
+    "level3": "",
+    "level4": "",
+    "description": "用户访问登录页后输入凭据完成系统身份验证",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  }
+]

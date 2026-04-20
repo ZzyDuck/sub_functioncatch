@@ -1,0 +1,79 @@
+[
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "用户登录入口",
+    "level1": "身份认证",
+    "level2": "用户登录",
+    "level3": "登录界面展示",
+    "level4": "登录页面加载",
+    "description": "用户访问URL http://10.28.149.50:9432/login/v1/#/，系统渲染统一身份认证登录页并初始化前端路由",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/login/v1/#/"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "用户登录",
+    "level1": "认证管理",
+    "level2": "用户认证",
+    "level3": "登录流程",
+    "level4": "登录表单提交",
+    "description": "用户输入用户名和密码后点击「登录」按钮，系统验证凭证并跳转至授权首页或返回错误提示",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "用户名输入",
+    "level1": "认证管理",
+    "level2": "用户认证",
+    "level3": "登录流程",
+    "level4": "凭证输入",
+    "description": "用户在用户名输入框中输入账号信息，系统实时启用输入校验（如格式、长度）并支持键盘回车触发登录",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "密码输入",
+    "level1": "认证管理",
+    "level2": "用户认证",
+    "level3": "登录流程",
+    "level4": "凭证输入",
+    "description": "用户在密码输入框中输入密码，系统启用安全掩码显示、禁止复制粘贴（若配置），并支持回车提交",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "记住我",
+    "level1": "认证管理",
+    "level2": "用户认证",
+    "level3": "登录流程",
+    "level4": "会话持久化",
+    "description": "用户勾选「记住我」复选框，系统在本地存储加密的会话令牌或长期凭证，下次访问自动填充用户名或保持登录态",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "忘记密码",
+    "level1": "认证管理",
+    "level2": "用户认证",
+    "level3": "凭证恢复",
+    "level4": "密码重置入口",
+    "description": "用户点击「忘记密码」链接，系统跳转至密码找回流程页面或弹出密码重置向导",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/login/v1/#/login"
+  },
+  {
+    "module": "统一身份认证与访问管理系统",
+    "function_name": "首页导航",
+    "level1": "系统门户",
+    "level2": "首页管理",
+    "level3": "页面入口",
+    "level4": "路由跳转",
+    "description": "用户访问URL http://10.28.149.50:9432/iam/v1/#/home/homeManage，系统加载/home/homeManage路由对应的首页管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  }
+]

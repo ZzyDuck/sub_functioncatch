@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import asyncio
 from typing import List
 
 from dotenv import load_dotenv
@@ -8,10 +9,10 @@ from dotenv import load_dotenv
 # 先加载环境变量，再导入其他模块
 load_dotenv()
 
-from .ai_service import extract_features, extract_features_from_url
-from .crawler import crawl_site, MAX_PAGES
-from .schema import FeatureItem
-from .feishu_service import FeishuClient
+from ai_service import extract_features, extract_features_from_url
+from spa_crawler import SPACrawler
+from schema import FeatureItem
+from feishu_service import FeishuClient
 
 def build_feature_rows(features: List[FeatureItem]) -> List[List[str]]:
     rows: List[List[str]] = []
@@ -31,7 +32,7 @@ def build_feature_rows(features: List[FeatureItem]) -> List[List[str]]:
         )
     return rows
 
-def main() -> None:
+async def main() -> None:
     parser = argparse.ArgumentParser(description="网站功能点提取工具")
     parser.add_argument("--url", required=True, help="起始 URL")
     parser.add_argument("--output", default="features.json", help="功能点输出文件")
@@ -42,14 +43,27 @@ def main() -> None:
 
     print("开始爬取链接，请稍候...\n")
 
-    visited_urls = crawl_site(start_url)
+    # 从环境变量获取登录凭证
+    username = os.getenv("USERNAME")
+    password = os.getenv("PASSWORD")
+    
+    # 使用 SPACrawler 替代原来的 crawl_site
+    crawler = SPACrawler(
+        start_url=start_url,
+        max_clicks=10,  # 保持与原来相同的最大页面数
+        wait_time=2000,
+        username=username,
+        password=password
+    )
+    results = await crawler.run()
+    visited_urls = results['urls']
     print(f"已爬取 URL 数量: {len(visited_urls)}")
 
     print("调用 AI 识别功能点（逐页分析）...\n")
     all_features = []
     for i, url in enumerate(visited_urls):
         print(f"  分析 [{i+1}/{len(visited_urls)}]: {url}")
-        features = extract_features_from_url(url)
+        features = await extract_features_from_url(url)
         print(f"    提取到 {len(features)} 个功能点")
         all_features.extend(features)
 
@@ -100,4 +114,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

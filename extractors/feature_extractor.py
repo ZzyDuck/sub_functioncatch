@@ -2,10 +2,10 @@ import asyncio
 import subprocess
 import sys
 import time
-from ..core.cdp_client import CDPClient
-from ..core.anti_detection import get_launch_args, get_anti_detection_script
-from .static_extractor import StaticExtractor
-from .dynamic_extractor import DynamicExtractor
+from core.cdp_client import CDPClient
+from core.anti_detection import get_launch_args, get_anti_detection_script
+from extractors.static_extractor import StaticExtractor
+from extractors.dynamic_extractor import DynamicExtractor
 
 
 class FeatureExtractor:

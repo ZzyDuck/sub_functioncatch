@@ -15,7 +15,7 @@ IGNORED_QUERY_PARAMS = {
     "sid",
 }
 SMART_IGNORE_PARAMS = {"page", "offset", "start", "limit", "size", "idx"}
-MAX_PAGES = 20
+MAX_PAGES = 5
 
 
 def scroll_page(page, max_scrolls=5, scroll_distance=800, wait_time=1000):

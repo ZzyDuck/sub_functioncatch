@@ -5,8 +5,8 @@ from typing import Any, List
 
 import requests
 
-from .schema import FeatureItem
-from .extractors.feature_extractor import FeatureExtractor
+from schema import FeatureItem
+from extractors.feature_extractor import FeatureExtractor
 
 AI_API_KEY = os.getenv("AI_API_KEY") 
 AI_MODEL = os.getenv("AI_MODEL", "qwen-plus") 
@@ -227,15 +227,11 @@ def extract_features(urls: List[str]) -> List[FeatureItem]:
     return features
 
 
-def extract_features_from_url(url: str) -> List[FeatureItem]:
+async def extract_features_from_url(url: str) -> List[FeatureItem]:
     print(f"  正在分析: {url}")
     
     extractor = FeatureExtractor(headless=True)
-    
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    page_data = loop.run_until_complete(extractor.extract_full_page(url))
-    loop.close()
+    page_data = await extractor.extract_full_page(url)
     
     return _ai_analyze_structured_data(url, page_data)
 
@@ -258,12 +254,28 @@ def _ai_analyze_structured_data(url: str, data: dict) -> List[FeatureItem]:
 ## 提取到的表单
 {json.dumps(data.get('forms', []), ensure_ascii=False, indent=2)}
 
+## 提取到的链接
+{json.dumps(data.get('links', [])[:30], ensure_ascii=False, indent=2)}
+
 ## 页面标题层级
 {json.dumps(data.get('headings', []), ensure_ascii=False, indent=2)}
 
 ## 动态内容
 - Tab 切换: {len(data.get('tabs', []))} 个
 - 弹窗: {len(data.get('popups', []))} 个
+
+## 分析要求
+1. 细粒度提取：必须提取页面上的每一个可交互元素，包括但不限于：
+   - 按钮：登录按钮、注册按钮、搜索按钮等
+   - 输入框：用户名输入框、密码输入框、搜索输入框等
+   - 复选框/单选框：任何类型的选择框
+   - 链接：导航菜单链接、忘记密码链接等
+   - 表单：登录表单、注册表单等
+
+2. 四级层级结构：每个功能点必须归属到四级层级中
+
+3. 功能描述格式：具体描述用户操作和系统响应，格式：`用户[操作][目标元素]，系统[响应行为]`
+
 
 ## 输出格式
 [
