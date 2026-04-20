@@ -2,6 +2,7 @@ import asyncio
 import subprocess
 import sys
 import time
+import os
 from core.cdp_client import CDPClient
 from core.anti_detection import get_launch_args, get_anti_detection_script
 from extractors.static_extractor import StaticExtractor
@@ -40,6 +41,9 @@ class FeatureExtractor:
         await client.connect(url)
 
         await client.evaluate(get_anti_detection_script())
+        
+        # 执行登录
+        await self._login(client)
 
         dynamic = DynamicExtractor(client)
         static = StaticExtractor(client)
@@ -66,3 +70,52 @@ class FeatureExtractor:
             "popups": popups,
             "load_more_clicked": load_more,
         }
+    
+    async def _login(self, client):
+        """执行登录操作"""
+        username = os.getenv("USERNAME")
+        password = os.getenv("PASSWORD")
+        
+        if not username or not password:
+            return
+        
+        # 检查当前页面是否是登录页面
+        current_url = await client.evaluate("window.location.href")
+        if "login" in current_url.lower():
+            print("  执行登录...")
+            
+            # 等待页面加载
+            await asyncio.sleep(2)
+            
+            # 填写用户名
+            try:
+                await client.evaluate('document.querySelector("input[placeholder=\"请输入帐号/手机号/邮箱\"]").value = "' + username + '"')
+            except:
+                try:
+                    await client.evaluate('document.querySelector("input[type=\"text\"]").value = "' + username + '"')
+                except:
+                    pass
+            
+            # 填写密码
+            try:
+                await client.evaluate('document.querySelector("input[placeholder=\"请输入密码\"]").value = "' + password + '"')
+            except:
+                try:
+                    await client.evaluate('document.querySelector("input[type=\"password\"]").value = "' + password + '"')
+                except:
+                    pass
+            
+            # 点击登录按钮
+            try:
+                await client.evaluate('document.querySelector("button:has-text(\"登录\")").click()')
+            except:
+                try:
+                    await client.evaluate('document.querySelector("button[type=\"submit\"]").click()')
+                except:
+                    try:
+                        await client.evaluate('document.querySelector("button").click()')
+                    except:
+                        pass
+            
+            # 等待登录完成
+            await asyncio.sleep(5)

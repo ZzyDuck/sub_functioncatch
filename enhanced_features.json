@@ -1,0 +1,13 @@
+[
+  {
+    "module": "首页",
+    "function_name": "Tab导航切换",
+    "level1": "页面导航",
+    "level2": "标签页管理",
+    "level3": "动态Tab控制",
+    "level4": "Tab项切换交互",
+    "description": "用户点击任意Tab项，系统切换当前显示内容区域并高亮选中Tab",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  }
+]

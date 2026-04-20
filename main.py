@@ -7,7 +7,7 @@ from typing import List
 from dotenv import load_dotenv
 
 # 先加载环境变量，再导入其他模块
-load_dotenv()
+load_dotenv(override=True)
 
 from ai_service import extract_features, extract_features_from_url
 from spa_crawler import SPACrawler
@@ -41,13 +41,13 @@ async def main() -> None:
     start_url = args.url
     output_file = args.output
 
-    print("开始爬取链接，请稍候...\n")
+    print("开始分析网站功能点...\n")
 
     # 从环境变量获取登录凭证
     username = os.getenv("USERNAME")
     password = os.getenv("PASSWORD")
     
-    # 使用 SPACrawler 替代原来的 crawl_site
+    # 初始化爬虫
     crawler = SPACrawler(
         start_url=start_url,
         max_clicks=10,  # 保持与原来相同的最大页面数
@@ -55,20 +55,16 @@ async def main() -> None:
         username=username,
         password=password
     )
+    
+    # 运行爬虫，直接获取功能点
     results = await crawler.run()
     visited_urls = results['urls']
-    print(f"已爬取 URL 数量: {len(visited_urls)}")
-
-    print("调用 AI 识别功能点（逐页分析）...\n")
-    all_features = []
-    for i, url in enumerate(visited_urls):
-        print(f"  分析 [{i+1}/{len(visited_urls)}]: {url}")
-        features = await extract_features_from_url(url)
-        print(f"    提取到 {len(features)} 个功能点")
-        all_features.extend(features)
+    all_features = results.get('features', [])  # 直接获取已分析的功能点
+    
+    print(f"\n已爬取 URL 数量: {len(visited_urls)}")
+    print(f"总计提取功能点: {len(all_features)}")
 
     features = all_features
-    print(f"总计提取功能点: {len(features)}")
 
     # 飞书集成
     feishu_app_id = os.getenv("FEISHU_APP_ID")

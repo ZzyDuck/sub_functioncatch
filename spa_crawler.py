@@ -1,8 +1,10 @@
 import asyncio
+from collections import deque
 from playwright.async_api import async_playwright
 from urllib.parse import urlparse, urljoin
 from typing import Set, List, Dict
 import time
+from ai_service import _ai_analyze_structured_data
 
 class SPACrawler:
     """SPA 应用全面爬虫 - 普适性和全面性优先"""
@@ -18,6 +20,19 @@ class SPACrawler:
         self.discovered_urls: Set[str] = set()
         self.discovered_routes: Set[str] = set()
         self.clicked_elements: Set[str] = set()  # 记录已点击的元素
+        self.all_features: List[Dict] = []  # 存储所有功能点
+    
+    def _normalize_hash_url(self, url: str) -> str:
+        """规范化SPA的hash路由URL"""
+        if '#' in url:
+            parts = url.split('#')
+            base = parts[0]
+            hash_part = parts[1] if len(parts) > 1 else ''
+            # 确保hash部分格式正确：#/path 而不是 #path
+            if hash_part and not hash_part.startswith('/'):
+                hash_part = '/' + hash_part
+            return base + '#' + hash_part
+        return url
         
     async def run(self) -> Dict[str, List[str]]:
         """运行爬虫"""
@@ -45,20 +60,159 @@ class SPACrawler:
             await self._inject_monitors(page)
             
             # 执行登录
+            login_success = False
             if self.username and self.password:
                 print("\n🔐 正在执行登录...")
-                await self._login(page)
-                print("✅ 登录完成")
+                login_success = await self._login(page)
+                if login_success:
+                    print("✅ 登录完成")
+                else:
+                    print("❌ 登录未完成")
             
-            # 开始爬取
-            await self._crawl_page(page, self.start_url, depth=0)
+            # 初始化队列
+            url_queue = deque()
+            
+            # 如果登录成功，使用当前页面URL；否则使用start_url
+            if login_success:
+                initial_url = self._normalize_hash_url(page.url)
+                print(f"\n📍 登录后开始爬取: {initial_url}")
+            else:
+                initial_url = self._normalize_hash_url(self.start_url)
+                print(f"\n📍 开始爬取: {initial_url}")
+            
+            url_queue.append(initial_url)
+            self.discovered_urls.add(initial_url)
+            
+            # 队列处理
+            while url_queue and len(self.discovered_urls) < self.max_clicks:
+                current_url = url_queue.popleft()
+                print(f"\n📍 处理: {current_url}")
+                
+                # 访问页面
+                try:
+                    await page.goto(current_url, wait_until='networkidle', timeout=30000)
+                    await page.wait_for_timeout(self.wait_time)
+                    
+                    # ========== 新增：分析当前页面 ==========
+                    await self._analyze_current_page(page, current_url)
+                    # ======================================
+                    
+                    # 滚动页面加载所有内容
+                    await self._scroll_page(page)
+                    
+                    # 提取当前页面的所有可交互元素
+                    interactable = await self._get_all_interactable_elements(page)
+                    print(f"   找到 {len(interactable)} 个可交互元素")
+                    
+                    # 按优先级排序：导航类 > 按钮 > 链接 > 其他
+                    interactable = self._prioritize_elements(interactable)
+                    
+                    # 遍历每个元素
+                    for idx, element_info in enumerate(interactable):
+                        if len(self.discovered_urls) >= self.max_clicks:
+                            break
+                            
+                        # 避免重复点击相同元素
+                        element_key = f"{element_info['tag']}|{element_info['text']}|{element_info.get('href', '')}"
+                        if element_key in self.clicked_elements:
+                            continue
+                        self.clicked_elements.add(element_key)
+                        
+                        print(f"   [{idx+1}] 点击: {element_info['text'][:30]}")
+                        
+                        try:
+                            # 重新获取元素（防止 DOM 变化）
+                            try:
+                                # 优先使用生成的selector
+                                if element_info.get('selector'):
+                                    el = await page.locator(element_info['selector']).first
+                                else:
+                                    # 备用：使用文本定位
+                                    el = await page.locator(f'text="{element_info["text"]}"').first
+                                await el.scroll_into_view_if_needed()
+                            except:
+                                continue
+                            
+                            # 记录点击前的状态
+                            before_url = page.url
+                            
+                            # 确保点击的是真正的路由链接
+                            # 检查元素是否是链接或有路由属性
+                            is_route_element = False
+                            tag = element_info['tag'].upper()
+                            href = element_info.get('href')
+                            
+                            # 检查是否是链接元素
+                            if tag == 'A' and href:
+                                is_route_element = True
+                            # 检查是否有路由相关属性
+                            elif any(key in element_info.get('className', '') for key in ['router-link', 'nav-link', 'menu-item']):
+                                is_route_element = True
+                            
+                            # 尝试点击
+                            try:
+                                # 使用 JavaScript 点击，更可靠
+                                await el.evaluate("el => el.click()")
+                                # 增加等待时间，确保Vue Router有足够时间更新
+                                await page.wait_for_timeout(self.wait_time * 2)
+                            except:
+                                # 备用：使用 Playwright 点击
+                                try:
+                                    await el.click(timeout=3000)
+                                    # 增加等待时间，确保Vue Router有足够时间更新
+                                    await page.wait_for_timeout(self.wait_time * 2)
+                                except:
+                                    continue
+                            
+                            # 检查是否发现新路由
+                            after_url = page.url
+                            after_url_normalized = self._normalize_hash_url(after_url)
+                            
+                            # 捕获所有发现的路由
+                            captured_routes = await page.evaluate("window.__SPA_CRAWLER.routes")
+                            for route in captured_routes:
+                                if route['url']:
+                                    full_url = urljoin(self.start_url, route['url'])
+                                    full_url_normalized = self._normalize_hash_url(full_url)
+                                    if full_url_normalized not in self.discovered_urls:
+                                        self.discovered_urls.add(full_url_normalized)
+                                        url_queue.append(full_url_normalized)
+                                        print(f"      发现新路由: {route['url']}")
+                            
+                            # URL 变化了，添加到队列
+                            if after_url_normalized != self._normalize_hash_url(before_url) and after_url_normalized not in self.discovered_urls:
+                                print(f"      ✅ 跳转到新页面: {after_url_normalized}")
+                                self.discovered_urls.add(after_url_normalized)
+                                url_queue.append(after_url_normalized)
+                            
+                            # 返回原页面
+                            current_page_url = self._normalize_hash_url(page.url)
+                            if current_page_url != current_url:
+                                try:
+                                    await page.goto(current_url, wait_until='networkidle', timeout=10000)
+                                    await page.wait_for_timeout(self.wait_time)
+                                except:
+                                    try:
+                                        await page.go_back()
+                                        await page.wait_for_timeout(self.wait_time)
+                                    except:
+                                        pass
+                            
+                        except Exception as e:
+                            print(f"      ❌ 点击出错: {str(e)[:50]}")
+                            continue
+                    
+                except Exception as e:
+                    print(f"❌ 访问页面出错: {str(e)[:50]}")
+                    continue
             
             await browser.close()
             
         return {
             'urls': list(self.discovered_urls),
             'routes': list(self.discovered_routes),
-            'total': len(self.discovered_urls)
+            'total': len(self.discovered_urls),
+            'features': self.all_features  # 新增
         }
     
     async def _inject_monitors(self, page):
@@ -138,6 +292,9 @@ class SPACrawler:
     
     async def _crawl_page(self, page, url: str, depth: int):
         """递归爬取页面"""
+        # 规范化URL
+        url = self._normalize_hash_url(url)
+        
         if url in self.discovered_urls:
             return
         if len(self.discovered_urls) >= self.max_clicks:
@@ -213,14 +370,23 @@ class SPACrawler:
                                 print(f"{'  ' * depth}      发现新路由: {route['url']}")
                     
                     # URL 变化了，递归爬取新页面
-                    if after_url != before_url and after_url not in self.discovered_urls:
-                        print(f"{'  ' * depth}      ✅ 跳转到新页面: {after_url}")
-                        await self._crawl_page(page, after_url, depth + 1)
+                    after_url_normalized = self._normalize_hash_url(after_url)
+                    if after_url_normalized != self._normalize_hash_url(before_url) and after_url_normalized not in self.discovered_urls:
+                        print(f"{'  ' * depth}      ✅ 跳转到新页面: {after_url_normalized}")
+                        await self._crawl_page(page, after_url_normalized, depth + 1)
                         
                         # 返回原页面
-                        if page.url != url:
-                            await page.go_back()
-                            await page.wait_for_timeout(self.wait_time)
+                        current_page_url = self._normalize_hash_url(page.url)
+                        if current_page_url != url:
+                            try:
+                                await page.goto(url, wait_until='networkidle', timeout=10000)
+                                await page.wait_for_timeout(self.wait_time)
+                            except:
+                                try:
+                                    await page.go_back()
+                                    await page.wait_for_timeout(self.wait_time)
+                                except:
+                                    pass
                     
                     # 检查是否打开弹窗
                     popups = await page.evaluate("window.__SPA_CRAWLER.popups")
@@ -344,12 +510,27 @@ class SPACrawler:
                         const key = `${el.tagName}|${text}|${href}`;
                         if (!seen.has(key)) {
                             seen.add(key);
+                            // 生成唯一选择器
+                            let selector = '';
+                            if (el.id) {
+                                selector = `#${el.id}`;
+                            } else if (el.className && el.className.trim()) {
+                                selector = `.${el.className.trim().replace(/\s+/g, '.')}`;
+                            } else if (el.tagName === 'A' && el.href) {
+                                selector = `a[href="${el.href}"]`;
+                            } else if (el.tagName === 'BUTTON' && text) {
+                                selector = `button:has-text("${text}")`;
+                            } else {
+                                selector = el.tagName.toLowerCase();
+                            }
+                            
                             elements.push({
                                 tag: el.tagName,
                                 text: text.slice(0, 100),
                                 href: href,
                                 className: el.className,
                                 id: el.id,
+                                selector: selector,
                                 type: el.type || ''
                             });
                         }
@@ -361,21 +542,25 @@ class SPACrawler:
         """)
     
     def _prioritize_elements(self, elements: List[Dict]) -> List[Dict]:
-        """按优先级排序元素"""
+        """按优先级排序元素，优先点击可能跳转的元素"""
         def get_priority(el):
             text = el['text'].lower()
+            tag = el['tag'].upper()
             
-            # 导航类元素最高优先级
-            if any(keyword in text for keyword in ['登录', '注册', '忘记', '首页', '个人', '设置']):
+            # 1. 链接元素（最可能跳转）
+            if tag == 'A' or el.get('href'):
                 return 1
-            # 按钮类次之
-            if el['tag'] in ['BUTTON', 'A']:
+            # 2. 导航类按钮
+            if tag == 'BUTTON' and any(keyword in text for keyword in ['登录', '注册', '首页', '个人', '设置', '退出', '返回']):
                 return 2
-            # 表单输入
-            if el.get('type') in ['text', 'email', 'password']:
+            # 3. 其他按钮
+            if tag == 'BUTTON':
                 return 3
-            # 其他
-            return 4
+            # 4. 表单输入元素
+            if tag in ['INPUT', 'SELECT', 'TEXTAREA']:
+                return 4
+            # 5. 其他元素
+            return 5
         
         elements.sort(key=get_priority)
         return elements
@@ -395,10 +580,200 @@ class SPACrawler:
         if frame.parent_frame is None:  # 主框架
             url = frame.url
             if url and url != 'about:blank':
-                self.discovered_urls.add(url)
-    
+                self.discovered_urls.add(self._normalize_hash_url(url))
+
+    async def _analyze_current_page(self, page, url: str):
+        """分析当前页面的功能点 - 针对 IAM 系统优化"""
+        print(f"   🤖 正在分析功能点: {url}")
+        
+        page_data = await page.evaluate("""
+            () => {
+                // 1. 收集侧边栏菜单（一级）
+                const level1Menus = [];
+                const menuSelectors = [
+                    '.el-submenu > .el-submenu__title',
+                    '.menu-item',
+                    '.nav-item',
+                    '.sidebar-item',
+                    '.ant-menu-item-group-title'
+                ];
+                
+                for (const selector of menuSelectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        const text = (el.innerText || '').trim();
+                        if (text && text !== '首页视图' && text.length < 50) {
+                            level1Menus.push({ text: text, level: 1 });
+                        }
+                    });
+                }
+                
+                // 2. 收集侧边栏菜单（二级及更深）
+                const level2Menus = [];
+                const subMenuSelectors = [
+                    '.el-menu--vertical .el-menu-item',
+                    '.el-menu--popup .el-menu-item',
+                    '.sub-menu-item',
+                    '.dropdown-item',
+                    '.menu-item > .submenu > .menu-item'
+                ];
+                
+                for (const selector of subMenuSelectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        const text = (el.innerText || '').trim();
+                        if (text && text.length < 50) {
+                            level2Menus.push({ text: text, level: 2 });
+                        }
+                    });
+                }
+                
+                // 3. 收集顶部导航栏按钮
+                const topButtons = [];
+                const topSelectors = [
+                    '.right-panel i',
+                    '.right-panel .el-dropdown',
+                    '.top-nav button',
+                    '.header-button'
+                ];
+                
+                for (const selector of topSelectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        const className = el.className || '';
+                        const text = (el.innerText || '').trim();
+                        let buttonText = text;
+                        
+                        if (!buttonText) {
+                            if (className.includes('ri-search-line')) buttonText = '搜索';
+                            else if (className.includes('ri-notification-line')) buttonText = '通知';
+                            else if (className.includes('ri-question-line')) buttonText = '帮助';
+                            else if (className.includes('ri-lock-line')) buttonText = '锁屏';
+                            else if (className.includes('ri-fullscreen-fill')) buttonText = '全屏';
+                            else if (className.includes('ri-brush-2-line')) buttonText = '主题切换';
+                            else if (className.includes('ri-refresh-line')) buttonText = '刷新';
+                            else if (className.includes('ri-bookmark-3-fill')) buttonText = '收藏';
+                            else if (className.includes('mine_manage')) buttonText = '个人中心/退出登录';
+                        }
+                        
+                        if (buttonText) {
+                            topButtons.push({ text: buttonText, location: '顶部导航栏' });
+                        }
+                    });
+                }
+                
+                // 4. 收集 Tab 页签
+                const tabs = [];
+                document.querySelectorAll('.el-tabs__item, .tab-item, .nav-tab').forEach(el => {
+                    const text = (el.innerText || '').trim();
+                    if (text && text.length < 50) {
+                        tabs.push({ text: text, type: '页签' });
+                    }
+                });
+                
+                // 5. 收集页面内的功能按钮
+                const pageButtons = [];
+                const buttonSelectors = [
+                    '.more_icon',
+                    '.el-button--text',
+                    '.more_icon span',
+                    'button:not(.el-submenu__title)',
+                    '.btn'
+                ];
+                
+                for (const selector of buttonSelectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        const text = (el.innerText || '').trim();
+                        if (text && text.length < 50) {
+                            pageButtons.push({ text: text, location: '页面内' });
+                        }
+                    });
+                }
+                
+                // 6. 收集所有可点击元素
+                const allClickable = [];
+                const clickableSelectors = [
+                    'button',
+                    'a[href]',
+                    '[role="button"]',
+                    '[role="menuitem"]',
+                    '.btn',
+                    '.nav-item',
+                    '.menu-item',
+                    '.sidebar-item',
+                    '.ant-menu-item',
+                    '.el-menu-item',
+                    '[router-link]',
+                    '[to]',
+                    '[onclick]'
+                ];
+                
+                for (const selector of clickableSelectors) {
+                    document.querySelectorAll(selector).forEach(el => {
+                        const text = (el.innerText || '').trim();
+                        if (text && text.length < 100 && el.offsetParent !== null) {
+                            allClickable.push({ text: text });
+                        }
+                    });
+                }
+                
+                // 映射到 AI 函数期望的格式
+                const buttons = [];
+                const links = [];
+                
+                // 合并所有按钮
+                topButtons.forEach(btn => buttons.push({ text: btn.text, visible: true }));
+                pageButtons.forEach(btn => buttons.push({ text: btn.text, visible: true }));
+                
+                // 合并所有链接（菜单和可点击元素）
+                level1Menus.forEach(menu => links.push({ text: menu.text, href: '#' }));
+                level2Menus.forEach(menu => links.push({ text: menu.text, href: '#' }));
+                allClickable.forEach(el => {
+                    if (el.text) links.push({ text: el.text, href: '#' });
+                });
+                
+                // 提取标题层级
+                const headings = [];
+                document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(h => {
+                    const text = (h.innerText || '').trim();
+                    if (text) {
+                        headings.push({ level: h.tagName, text: text });
+                    }
+                });
+                
+                // 提取表单
+                const forms = Array.from(document.querySelectorAll('form')).map(f => ({
+                    action: f.action,
+                    inputs: Array.from(f.querySelectorAll('input')).map(i => i.name)
+                }));
+                
+                return {
+                    title: document.title,
+                    url: window.location.href,
+                    buttons: buttons,
+                    links: links,
+                    headings: headings,
+                    forms: forms,
+                    tabs: tabs,
+                    level1Menus: level1Menus,
+                    level2Menus: level2Menus,
+                    topButtons: topButtons,
+                    pageButtons: pageButtons,
+                    clickableElements: allClickable,
+                    totalElements: level1Menus.length + level2Menus.length + topButtons.length + tabs.length + pageButtons.length
+                };
+            }
+        """)
+        
+        print(f"   页面元素统计: 一级菜单={len(page_data.get('level1Menus', []))}, "
+            f"二级菜单={len(page_data.get('level2Menus', []))}, "
+            f"顶部按钮={len(page_data.get('topButtons', []))}, "
+            f"页签={len(page_data.get('tabs', []))}")
+        
+        features = _ai_analyze_structured_data(url, page_data)
+        print(f"   ✅ 提取到 {len(features)} 个功能点")
+        
+        self.all_features.extend(features)
+
     async def _login(self, page):
-        """执行登录操作"""
+        """执行登录操作，返回登录是否成功"""
         # 访问登录页面
         login_url = "http://10.28.149.50:9432/login/v1/#/login"
         await page.goto(login_url, wait_until='networkidle', timeout=30000)
@@ -420,6 +795,15 @@ class SPACrawler:
             # 等待登录完成
             await page.wait_for_timeout(self.wait_time * 2)
             
+            # 检查是否登录成功
+            if "login" not in page.url.lower():
+                print("✅ 登录成功!")
+                return True
+            else:
+                print("❌ 登录失败，仍在登录页面")
+                return False
+            
         except Exception as e:
             print(f"❌ 登录失败: {str(e)[:50]}")
+            return False
 
