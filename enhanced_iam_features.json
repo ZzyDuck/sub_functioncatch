@@ -1,0 +1,222 @@
+[
+  {
+    "module": "IAM平台",
+    "function_name": "搜索功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击搜索按钮，系统展开搜索输入框并支持关键词检索",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "帮助功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击帮助按钮，系统打开帮助文档或帮助中心页面",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "锁屏功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击锁屏按钮，系统立即锁定当前会话并要求重新认证",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "全屏功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击全屏按钮，系统将当前页面切换至浏览器全屏显示模式",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "主题切换功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击主题切换按钮，系统在浅色/深色/自定义主题间循环切换UI样式",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "刷新功能（顶部）",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击顶部刷新按钮，系统重新加载当前首页视图及所有动态组件",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "收藏功能",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击收藏按钮，系统将当前页面或当前页签添加至个人收藏夹",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "超级管理员入口",
+    "level1": "顶部导航栏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击超级管理员按钮，系统跳转至超级管理员专属管理控制台",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "首页视图页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击首页视图页签，系统切换至首页综合仪表盘视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "用户中心页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击用户中心页签，系统切换至用户信息、个人设置与操作日志聚合视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "认证中心页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击认证中心页签，系统切换至多因素认证、证书管理、登录策略配置视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "访问控制页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击访问控制页签，系统切换至基于角色/属性的访问策略配置与审计视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "深度权限页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击深度权限页签，系统切换至细粒度数据级、字段级、行级权限策略管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "应用资源页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击应用资源页签，系统切换至已接入应用列表、资源注册、应用授权管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "统一配置页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击统一配置页签，系统切换至全局参数、组织架构、字典项等基础配置管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "平台管理页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击平台管理页签，系统切换至系统监控、日志中心、告警规则、服务治理等运维管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "首页页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击首页页签，系统切换至默认首页工作台（可能为门户聚合页）",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "应用资源登录页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击应用资源登录页签，系统切换至第三方应用单点登录（SSO）发起与凭证管理视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "金库待审批页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击金库待审批页签，系统切换至特权操作审批队列（如高危命令、敏感数据导出）待办列表",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "IAM平台",
+    "function_name": "权限视图页签",
+    "level1": "页签",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击权限视图页签，系统切换至可视化权限图谱、权限继承关系、权限冲突分析视图",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  }
+]

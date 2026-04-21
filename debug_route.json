@@ -1,0 +1,233 @@
+[
+  {
+    "module": "首页",
+    "function_name": "访问首页",
+    "level1": "首页",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击首页链接或页签，系统加载首页视图内容",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "搜索",
+    "function_name": "触发全局搜索",
+    "level1": "搜索",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击搜索按钮，系统弹出搜索输入框或跳转至搜索页面",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "帮助",
+    "function_name": "打开帮助文档",
+    "level1": "帮助",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击帮助按钮，系统展示帮助中心或在线文档页面",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "锁屏",
+    "function_name": "锁定当前会话",
+    "level1": "锁屏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击锁屏按钮，系统立即锁定界面并要求重新认证后解锁",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "全屏",
+    "function_name": "切换全屏显示模式",
+    "level1": "全屏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击全屏按钮，系统将当前页面切换为浏览器全屏显示模式",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "主题切换",
+    "function_name": "切换UI主题样式",
+    "level1": "主题切换",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击主题切换按钮，系统在浅色/深色/自定义主题间循环切换并实时渲染",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "刷新",
+    "function_name": "刷新当前页面",
+    "level1": "刷新",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击刷新按钮，系统重新加载当前首页视图及所有动态组件数据",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "收藏",
+    "function_name": "收藏当前页面",
+    "level1": "收藏",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击收藏按钮，系统将当前首页视图添加至个人收藏夹以便快速访问",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "超级管理员",
+    "function_name": "进入超级管理员控制台",
+    "level1": "超级管理员",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击超级管理员按钮，系统跳转至超级管理员专属管理界面",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "首页视图",
+    "function_name": "切换至首页视图页签",
+    "level1": "首页视图",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击首页视图页签，系统加载并展示首页概览、快捷入口、通知等聚合信息",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "用户中心",
+    "function_name": "切换至用户中心页签",
+    "level1": "用户中心",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击用户中心页签，系统加载个人信息、权限、偏好设置等用户专属功能模块",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "认证中心",
+    "function_name": "切换至认证中心页签",
+    "level1": "认证中心",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击认证中心页签，系统加载多因素认证、登录历史、设备信任管理等功能",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "访问控制",
+    "function_name": "切换至访问控制页签",
+    "level1": "访问控制",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击访问控制页签，系统加载基于角色/策略的资源访问授权配置界面",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "深度权限",
+    "function_name": "切换至深度权限页签",
+    "level1": "深度权限",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击深度权限页签，系统加载细粒度权限（字段级、行级、操作级）配置与审计功能",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "应用资源",
+    "function_name": "切换至应用资源页签",
+    "level1": "应用资源",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击应用资源页签，系统加载已接入应用列表、资源注册、元数据管理等功能",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "统一配置",
+    "function_name": "切换至统一配置页签",
+    "level1": "统一配置",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击统一配置页签，系统加载平台级参数、策略模板、环境变量等集中配置管理界面",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "平台管理",
+    "function_name": "切换至平台管理页签",
+    "level1": "平台管理",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击平台管理页签，系统加载租户管理、系统监控、日志审计、服务治理等运维功能",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "首页",
+    "function_name": "重复首页页签（导航定位）",
+    "level1": "首页",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击页签中的‘首页’，系统确保当前处于主首页视图并重置导航状态",
+    "importance": "中",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "应用资源登录",
+    "function_name": "切换至应用资源登录页签",
+    "level1": "应用资源登录",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击应用资源登录页签，系统加载单点登录（SSO）门户及应用快捷登录入口",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "金库待审批",
+    "function_name": "切换至金库待审批页签",
+    "level1": "金库待审批",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击金库待审批页签，系统加载特权操作（如数据库变更、高危命令）的审批任务列表",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  },
+  {
+    "module": "权限视图",
+    "function_name": "切换至权限视图页签",
+    "level1": "权限视图",
+    "level2": "",
+    "level3": "",
+    "level4": "",
+    "description": "用户点击权限视图页签，系统加载可视化权限地图、权限依赖分析、权限冲突检测等功能",
+    "importance": "高",
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+  }
+]

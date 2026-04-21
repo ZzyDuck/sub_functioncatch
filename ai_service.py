@@ -239,6 +239,7 @@ async def extract_features_from_url(url: str) -> List[FeatureItem]:
 def _ai_analyze_structured_data(url: str, data: dict) -> List[FeatureItem]:
     """AI 分析结构化数据，生成功能点"""
     
+    # 构建 prompt，使用 f-string 但小心处理 JSON 格式
     prompt = f"""
 基于以下提取的页面结构化数据，分析网站功能点。
 
@@ -260,9 +261,28 @@ def _ai_analyze_structured_data(url: str, data: dict) -> List[FeatureItem]:
 ## 页面标题层级
 {json.dumps(data.get('headings', []), ensure_ascii=False, indent=2)}
 
+## 菜单数据
+- 一级菜单: {json.dumps(data.get('level1Menus', []), ensure_ascii=False, indent=2)}
+- 二级菜单: {json.dumps(data.get('level2Menus', []), ensure_ascii=False, indent=2)}
+- 顶部按钮: {json.dumps(data.get('topButtons', []), ensure_ascii=False, indent=2)}
+- 页签: {json.dumps(data.get('tabs', []), ensure_ascii=False, indent=2)}
+
 ## 动态内容
 - Tab 切换: {len(data.get('tabs', []))} 个
 - 弹窗: {len(data.get('popups', []))} 个
+
+## 重要规则（必须遵守）
+1. 每个一级菜单生成一个独立功能点
+2. 每个二级菜单生成一个独立功能点
+3. 每个顶部按钮生成一个独立功能点
+4. 每个 Tab 页签生成一个独立功能点
+5. 不要合并任何功能点，即使它们属于同一个模块
+
+## 输入数据说明
+- level1Menus: 一级菜单，每个都应该生成功能点
+- level2Menus: 二级菜单，每个都应该生成功能点
+- topButtons: 顶部按钮，每个都应该生成功能点
+- tabs: 页签，每个都应该生成功能点
 
 ## 分析要求
 1. 细粒度提取：必须提取页面上的每一个可交互元素，包括但不限于：
@@ -274,13 +294,10 @@ def _ai_analyze_structured_data(url: str, data: dict) -> List[FeatureItem]:
 
 2. 四级层级结构：每个功能点必须归属到四级层级中
 
-3. 功能描述格式：具体描述用户操作和系统响应，格式：`用户[操作][目标元素]，系统[响应行为]`
-
+3. 功能描述格式：具体描述用户操作和系统响应，格式：用户[操作][目标元素]，系统[响应行为]
 
 ## 输出格式
-[
-  {{"module": "模块名", "function_name": "功能名称", "level1": "一级功能", "level2": "二级功能（可选）", "level3": "三级功能（可选）", "level4": "四级功能（可选）", "description": "用户点击「登录」按钮，系统弹出登录表单", "importance": "高/中/低"}}
-]
+[{{"module": "模块名", "function_name": "功能名称", "level1": "一级功能", "level2": "二级功能（可选）", "level3": "三级功能（可选）", "level4": "四级功能（可选）", "description": "用户点击登录按钮，系统弹出登录表单", "importance": "高/中/低"}}]
 
 只输出 JSON 数组，不要有任何其他文字。
 """

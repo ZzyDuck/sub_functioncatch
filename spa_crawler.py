@@ -135,6 +135,7 @@ class SPACrawler:
                             
                             # 记录点击前的状态
                             before_url = page.url
+                            print(f"      调试: 点击前 URL: {before_url}")
                             
                             # 确保点击的是真正的路由链接
                             # 检查元素是否是链接或有路由属性
@@ -149,19 +150,24 @@ class SPACrawler:
                             elif any(key in element_info.get('className', '') for key in ['router-link', 'nav-link', 'menu-item']):
                                 is_route_element = True
                             
+                            print(f"      调试: 是否路由元素: {is_route_element}, 标签: {tag}, href: {href}")
+                            
                             # 尝试点击
                             try:
                                 # 使用 JavaScript 点击，更可靠
                                 await el.evaluate("el => el.click()")
                                 # 增加等待时间，确保Vue Router有足够时间更新
                                 await page.wait_for_timeout(self.wait_time * 2)
+                                print(f"      调试: JavaScript 点击成功")
                             except:
                                 # 备用：使用 Playwright 点击
                                 try:
                                     await el.click(timeout=3000)
                                     # 增加等待时间，确保Vue Router有足够时间更新
                                     await page.wait_for_timeout(self.wait_time * 2)
+                                    print(f"      调试: Playwright 点击成功")
                                 except:
+                                    print(f"      调试: 点击失败")
                                     continue
                             
                             # 检查是否发现新路由
@@ -170,14 +176,20 @@ class SPACrawler:
                             
                             # 捕获所有发现的路由
                             captured_routes = await page.evaluate("window.__SPA_CRAWLER.routes")
-                            for route in captured_routes:
-                                if route['url']:
-                                    full_url = urljoin(self.start_url, route['url'])
-                                    full_url_normalized = self._normalize_hash_url(full_url)
-                                    if full_url_normalized not in self.discovered_urls:
-                                        self.discovered_urls.add(full_url_normalized)
-                                        url_queue.append(full_url_normalized)
-                                        print(f"      发现新路由: {route['url']}")
+                            print(f"      调试: 捕获到的路由数量: {len(captured_routes) if captured_routes else 0}")
+                            if captured_routes:
+                                print(f"      捕获到 {len(captured_routes)} 个路由变化")
+                                for route in captured_routes:
+                                    if route.get('url'):
+                                        full_url = urljoin(self.start_url, route['url'])
+                                        full_url_normalized = self._normalize_hash_url(full_url)
+                                        print(f"      路由: {route['type']} -> {full_url}")
+                                        if full_url_normalized not in self.discovered_urls:
+                                            self.discovered_urls.add(full_url_normalized)
+                                            url_queue.append(full_url_normalized)
+                                            print(f"      ✅ 发现新路由: {route['url']}")
+                            else:
+                                print(f"      调试: 没有捕获到路由变化")
                             
                             # URL 变化了，添加到队列
                             if after_url_normalized != self._normalize_hash_url(before_url) and after_url_normalized not in self.discovered_urls:
@@ -237,6 +249,7 @@ class SPACrawler:
                         url: url,
                         timestamp: Date.now()
                     });
+                    console.log('[SPA Crawler] pushState:', url);
                 }
                 return originalPush.call(this, state, title, url);
             };
@@ -248,9 +261,30 @@ class SPACrawler:
                         url: url,
                         timestamp: Date.now()
                     });
+                    console.log('[SPA Crawler] replaceState:', url);
                 }
                 return originalReplace.call(this, state, title, url);
             };
+            
+            // 监听 hashchange 事件（针对 hash 路由）
+            window.addEventListener('hashchange', (e) => {
+                window.__SPA_CRAWLER.routes.push({
+                    type: 'hashchange',
+                    url: e.newURL,
+                    timestamp: Date.now()
+                });
+                console.log('[SPA Crawler] hashchange:', e.newURL);
+            });
+            
+            // 监听 popstate 事件（浏览器前进/后退）
+            window.addEventListener('popstate', (e) => {
+                window.__SPA_CRAWLER.routes.push({
+                    type: 'popstate',
+                    url: window.location.href,
+                    timestamp: Date.now()
+                });
+                console.log('[SPA Crawler] popstate:', window.location.href);
+            });
             
             // 监听所有点击事件
             document.addEventListener('click', (e) => {
@@ -590,18 +624,31 @@ class SPACrawler:
             () => {
                 // 1. 收集侧边栏菜单（一级）
                 const level1Menus = [];
+                const menuTextSet = new Set();
                 const menuSelectors = [
                     '.el-submenu > .el-submenu__title',
                     '.menu-item',
                     '.nav-item',
                     '.sidebar-item',
-                    '.ant-menu-item-group-title'
+                    '.ant-menu-item-group-title',
+                    '.el-menu-item-group > .el-menu-item-group__title',
+                    '.el-menu--vertical > .el-menu-item',
+                    '.sidebar > .menu > .item',
+                    '.nav > .item',
+                    '[role="menuitem"]',
+                    '.el-menu-item',
+                    '.menu > li > a',
+                    '.nav > li > a',
+                    '.sidebar > ul > li > a',
+                    '.el-menu > .el-menu-item',
+                    '.el-menu--horizontal > .el-menu-item'
                 ];
                 
                 for (const selector of menuSelectors) {
                     document.querySelectorAll(selector).forEach(el => {
                         const text = (el.innerText || '').trim();
-                        if (text && text !== '首页视图' && text.length < 50) {
+                        if (text && text !== '首页视图' && text.length < 50 && !menuTextSet.has(text)) {
+                            menuTextSet.add(text);
                             level1Menus.push({ text: text, level: 1 });
                         }
                     });
@@ -609,18 +656,30 @@ class SPACrawler:
                 
                 // 2. 收集侧边栏菜单（二级及更深）
                 const level2Menus = [];
+                const subMenuTextSet = new Set();
                 const subMenuSelectors = [
                     '.el-menu--vertical .el-menu-item',
                     '.el-menu--popup .el-menu-item',
                     '.sub-menu-item',
                     '.dropdown-item',
-                    '.menu-item > .submenu > .menu-item'
+                    '.menu-item > .submenu > .menu-item',
+                    '.el-submenu .el-menu-item',
+                    '.sidebar .submenu .item',
+                    '.nav .subnav .item',
+                    '.el-menu--vertical > .el-submenu > .el-menu > .el-menu-item',
+                    '.el-menu-item-group > .el-menu > .el-menu-item',
+                    '.menu > li > ul > li > a',
+                    '.nav > li > ul > li > a',
+                    '.sidebar > ul > li > ul > li > a',
+                    '.el-submenu > .el-menu > .el-menu-item',
+                    '.dropdown-menu > li > a'
                 ];
                 
                 for (const selector of subMenuSelectors) {
                     document.querySelectorAll(selector).forEach(el => {
                         const text = (el.innerText || '').trim();
-                        if (text && text.length < 50) {
+                        if (text && text.length < 50 && !subMenuTextSet.has(text)) {
+                            subMenuTextSet.add(text);
                             level2Menus.push({ text: text, level: 2 });
                         }
                     });
