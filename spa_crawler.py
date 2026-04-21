@@ -119,18 +119,22 @@ class SPACrawler:
                         self.clicked_elements.add(element_key)
                         
                         print(f"   [{idx+1}] 点击: {element_info['text'][:30]}")
+                        print(f"      调试: 元素信息: tag={element_info['tag']}, selector={element_info.get('selector', 'N/A')}")
                         
                         try:
                             # 重新获取元素（防止 DOM 变化）
                             try:
                                 # 优先使用生成的selector
                                 if element_info.get('selector'):
-                                    el = await page.locator(element_info['selector']).first
+                                    el = page.locator(element_info['selector']).first
+                                    print(f"      调试: 使用selector定位成功")
                                 else:
                                     # 备用：使用文本定位
-                                    el = await page.locator(f'text="{element_info["text"]}"').first
+                                    el = page.locator(f'text="{element_info["text"]}"').first
+                                    print(f"      调试: 使用文本定位成功")
                                 await el.scroll_into_view_if_needed()
-                            except:
+                            except Exception as loc_err:
+                                print(f"      调试: 元素定位失败: {str(loc_err)[:50]}")
                                 continue
                             
                             # 记录点击前的状态
@@ -155,19 +159,20 @@ class SPACrawler:
                             # 尝试点击
                             try:
                                 # 使用 JavaScript 点击，更可靠
-                                await el.evaluate("el => el.click()")
+                                await el.evaluate("element => element.click()")
                                 # 增加等待时间，确保Vue Router有足够时间更新
                                 await page.wait_for_timeout(self.wait_time * 2)
                                 print(f"      调试: JavaScript 点击成功")
-                            except:
+                            except Exception as js_err:
+                                print(f"      调试: JS点击失败: {str(js_err)[:50]}")
                                 # 备用：使用 Playwright 点击
                                 try:
                                     await el.click(timeout=3000)
                                     # 增加等待时间，确保Vue Router有足够时间更新
                                     await page.wait_for_timeout(self.wait_time * 2)
                                     print(f"      调试: Playwright 点击成功")
-                                except:
-                                    print(f"      调试: 点击失败")
+                                except Exception as pw_err:
+                                    print(f"      调试: Playwright点击失败: {str(pw_err)[:50]}")
                                     continue
                             
                             # 检查是否发现新路由
@@ -188,6 +193,8 @@ class SPACrawler:
                                             self.discovered_urls.add(full_url_normalized)
                                             url_queue.append(full_url_normalized)
                                             print(f"      ✅ 发现新路由: {route['url']}")
+                                # 清空路由监听器，避免重复检查
+                                await page.evaluate("window.__SPA_CRAWLER.routes = []")
                             else:
                                 print(f"      调试: 没有捕获到路由变化")
                             
