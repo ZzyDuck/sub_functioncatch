@@ -84,9 +84,18 @@ class SPACrawler:
             self.discovered_urls.add(initial_url)
             
             # 队列处理
-            while url_queue and len(self.discovered_urls) < self.max_clicks:
+            processed_urls = set()
+            while url_queue and len(processed_urls) < self.max_clicks:
                 current_url = url_queue.popleft()
+                
+                # 避免重复处理
+                if current_url in processed_urls:
+                    continue
+                processed_urls.add(current_url)
+                
                 print(f"\n📍 处理: {current_url}")
+                print(f"   队列长度: {len(url_queue)}")
+                print(f"   已处理URL: {len(processed_urls)}/{self.max_clicks}")
                 
                 # 访问页面
                 try:
@@ -109,7 +118,7 @@ class SPACrawler:
                     
                     # 遍历每个元素
                     for idx, element_info in enumerate(interactable):
-                        if len(self.discovered_urls) >= self.max_clicks:
+                        if len(processed_urls) >= self.max_clicks:
                             break
                             
                         # 避免重复点击相同元素
@@ -193,6 +202,10 @@ class SPACrawler:
                                             self.discovered_urls.add(full_url_normalized)
                                             url_queue.append(full_url_normalized)
                                             print(f"      ✅ 发现新路由: {route['url']}")
+                                        elif full_url_normalized not in processed_urls:
+                                            # 如果URL已经在discovered_urls中但还没有处理，添加到队列
+                                            url_queue.append(full_url_normalized)
+                                            print(f"      ✅ 添加未处理路由到队列: {route['url']}")
                                 # 清空路由监听器，避免重复检查
                                 await page.evaluate("window.__SPA_CRAWLER.routes = []")
                             else:
@@ -223,6 +236,7 @@ class SPACrawler:
                     
                 except Exception as e:
                     print(f"❌ 访问页面出错: {str(e)[:50]}")
+                    print(f"   继续处理队列中的其他URL...")
                     continue
             
             await browser.close()

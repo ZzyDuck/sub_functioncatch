@@ -50,7 +50,7 @@ async def main() -> None:
     # 初始化爬虫
     crawler = SPACrawler(
         start_url=start_url,
-        max_clicks=10,  # 保持与原来相同的最大页面数
+        max_clicks=50,  # 增加最大页面数，确保所有发现的URL都能被处理
         wait_time=2000,
         username=username,
         password=password
