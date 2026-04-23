@@ -1,0 +1,215 @@
+{
+  "首页": {
+    "url": "/home",
+    "children": {
+      "首页视图": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+        "children": {
+          "首页": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage"
+          }
+        }
+      },
+      "用户中心": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+        "children": {
+          "用户管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage"
+          },
+          "身份治理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage"
+          },
+          "同步中心": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/syncManage"
+          }
+        }
+      },
+      "认证中心": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+        "children": {
+          "认证策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy"
+          }
+        }
+      },
+      "访问控制": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+        "children": {
+          "登录策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy"
+          },
+          "密码策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy"
+          },
+          "远程访问管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage"
+          },
+          "金库策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+            "children": {
+              "审批关系管理": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation"
+              },
+              "登录类策略": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy"
+              },
+              "操作类策略": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy"
+              },
+              "门户审批": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval"
+              },
+              "金库应急": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultEmergency"
+              },
+              "金库预约": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/reservation"
+              },
+              "金库白名单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist"
+              }
+            }
+          }
+        }
+      },
+      "深度权限": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+        "children": {
+          "菜单管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage"
+          },
+          "角色授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission"
+          },
+          "访问授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission"
+          },
+          "属性授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/attrPermission"
+          },
+          "委托授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage"
+          }
+        }
+      },
+      "应用资源": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+        "children": {
+          "应用管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager"
+          },
+          "应用登录": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin"
+          },
+          "工具管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage"
+          }
+        }
+      },
+      "统一配置": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+        "children": {
+          "基础配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration"
+          },
+          "安全配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration"
+          },
+          "数据模型": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel"
+          },
+          "模版配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate"
+          },
+          "组件管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage"
+          },
+          "开发配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig"
+          },
+          "加密机配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig"
+          },
+          "插件管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage"
+          }
+        }
+      },
+      "平台管理": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+        "children": {
+          "会话管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/monitorSession"
+          },
+          "缓存刷新": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh"
+          },
+          "数据清理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+            "children": {
+              "中间件日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog"
+              },
+              "清理记录": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/dataCleanRecord"
+              },
+              "操作日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog"
+              },
+              "系统运行日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog"
+              }
+            }
+          },
+          "日志中心": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+            "children": {
+              "日志管理": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logManagement"
+              },
+              "日志转发": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward"
+              }
+            }
+          },
+          "流程管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward",
+            "children": {
+              "发起工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmList"
+              },
+              "我的工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable"
+              },
+              "全量工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTableAll"
+              }
+            }
+          },
+          "数据备份": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTableAll",
+            "children": {
+              "备份配置": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup"
+              },
+              "备份查询": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackupSearchList"
+              }
+            }
+          },
+          "许可管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackupSearchList",
+            "children": {
+              "激活授权": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/activateAuthorize"
+              },
+              "历史授权": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/historyAuthorize"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

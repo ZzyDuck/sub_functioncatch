@@ -21,6 +21,7 @@ class SPACrawler:
         self.discovered_routes: Set[str] = set()
         self.clicked_elements: Set[str] = set()  # 记录已点击的元素
         self.all_features: List[Dict] = []  # 存储所有功能点
+        self.url_hierarchy: Dict[str, Dict] = {}  # 存储 URL 的父级关系
     
     def _normalize_hash_url(self, url: str) -> str:
         """规范化SPA的hash路由URL"""
@@ -97,14 +98,11 @@ class SPACrawler:
                 print(f"   队列长度: {len(url_queue)}")
                 print(f"   已处理URL: {len(processed_urls)}/{self.max_clicks}")
                 
-                # 访问页面
+                # 分析当前页面（不需要重新goto，直接分析当前页面）
                 try:
-                    await page.goto(current_url, wait_until='networkidle', timeout=30000)
-                    await page.wait_for_timeout(self.wait_time)
-                    
-                    # ========== 新增：分析当前页面 ==========
+                    # ========== 分析当前页面 ==========
                     await self._analyze_current_page(page, current_url)
-                    # ======================================
+                    # ==================================
                     
                     # 滚动页面加载所有内容
                     await self._scroll_page(page)
@@ -165,27 +163,34 @@ class SPACrawler:
                             
                             print(f"      调试: 是否路由元素: {is_route_element}, 标签: {tag}, href: {href}")
                             
+                            # 记录点击前的URL
+                            before_url = page.url
+                            
                             # 尝试点击
                             try:
                                 # 使用 JavaScript 点击，更可靠
                                 await el.evaluate("element => element.click()")
-                                # 增加等待时间，确保Vue Router有足够时间更新
-                                await page.wait_for_timeout(self.wait_time * 2)
                                 print(f"      调试: JavaScript 点击成功")
                             except Exception as js_err:
                                 print(f"      调试: JS点击失败: {str(js_err)[:50]}")
                                 # 备用：使用 Playwright 点击
                                 try:
                                     await el.click(timeout=3000)
-                                    # 增加等待时间，确保Vue Router有足够时间更新
-                                    await page.wait_for_timeout(self.wait_time * 2)
                                     print(f"      调试: Playwright 点击成功")
                                 except Exception as pw_err:
                                     print(f"      调试: Playwright点击失败: {str(pw_err)[:50]}")
                                     continue
                             
-                            # 检查是否发现新路由
-                            after_url = page.url
+                            # 主动轮询 URL 变化，捕获二级菜单的路由变化
+                            after_url = before_url
+                            for i in range(10):
+                                await page.wait_for_timeout(5000)
+                                current_url = page.url
+                                if current_url != before_url:
+                                    print(f"      ✅ 检测到 URL 变化: {current_url}")
+                                    after_url = current_url
+                                    break
+                            
                             after_url_normalized = self._normalize_hash_url(after_url)
                             
                             # 捕获所有发现的路由
@@ -211,15 +216,29 @@ class SPACrawler:
                             else:
                                 print(f"      调试: 没有捕获到路由变化")
                             
-                            # URL 变化了，添加到队列
-                            if after_url_normalized != self._normalize_hash_url(before_url) and after_url_normalized not in self.discovered_urls:
+                            # URL 变化了，添加到队列但继续在原页面探索
+                            before_url_normalized = self._normalize_hash_url(before_url)
+                            if after_url_normalized != before_url_normalized:
                                 print(f"      ✅ 跳转到新页面: {after_url_normalized}")
-                                self.discovered_urls.add(after_url_normalized)
-                                url_queue.append(after_url_normalized)
-                            
-                            # 返回原页面
-                            current_page_url = self._normalize_hash_url(page.url)
-                            if current_page_url != current_url:
+                                
+                                # 记录 URL 的层级关系
+                                self.url_hierarchy[after_url_normalized] = {
+                                    "parent_url": before_url_normalized,
+                                    "click_text": element_info['text'],
+                                    "depth": self.url_hierarchy.get(before_url_normalized, {}).get("depth", 0) + 1
+                                }
+                                print(f"      记录层级关系: {element_info['text']} -> {after_url_normalized} (深度: {self.url_hierarchy[after_url_normalized]['depth']})")
+                                
+                                # 记录新URL但不立即跳出循环
+                                if after_url_normalized not in processed_urls:
+                                    # 添加到队列末尾，稍后处理
+                                    url_queue.append(after_url_normalized)
+                                    self.discovered_urls.add(after_url_normalized)
+                                    print(f"      添加到队列: {after_url_normalized}")
+                                else:
+                                    print(f"      已存在队列中: {after_url_normalized}")
+                                
+                                # 返回原页面，继续探索
                                 try:
                                     await page.goto(current_url, wait_until='networkidle', timeout=10000)
                                     await page.wait_for_timeout(self.wait_time)
@@ -241,11 +260,54 @@ class SPACrawler:
             
             await browser.close()
             
+        # 构建层级化的功能点结构
+        def build_hierarchical_features():
+            # 按 URL 分组功能点
+            features_by_url = {}
+            for feature in self.all_features:
+                url = feature.get('url', '')
+                if url not in features_by_url:
+                    features_by_url[url] = []
+                features_by_url[url].append(feature)
+            
+            # 构建树形结构
+            def build_tree(url):
+                node = {
+                    'url': url,
+                    'depth': self.url_hierarchy.get(url, {}).get('depth', 0),
+                    'click_text': self.url_hierarchy.get(url, {}).get('click_text', ''),
+                    'features': features_by_url.get(url, []),
+                    'children': []
+                }
+                
+                # 查找所有子节点
+                for child_url, info in self.url_hierarchy.items():
+                    if info.get('parent_url') == url:
+                        node['children'].append(build_tree(child_url))
+                
+                return node
+            
+            # 找到根节点（没有父级的 URL）
+            root_urls = []
+            for url in self.discovered_urls:
+                if url not in self.url_hierarchy:
+                    root_urls.append(url)
+            
+            # 构建树
+            hierarchy = []
+            for root_url in root_urls:
+                hierarchy.append(build_tree(root_url))
+            
+            return hierarchy
+        
+        hierarchical_features = build_hierarchical_features()
+        
         return {
             'urls': list(self.discovered_urls),
             'routes': list(self.discovered_routes),
             'total': len(self.discovered_urls),
-            'features': self.all_features  # 新增
+            'features': self.all_features,  # 扁平列表（保持向后兼容）
+            'hierarchical_features': hierarchical_features  # 层级结构
         }
     
     async def _inject_monitors(self, page):
@@ -647,6 +709,8 @@ class SPACrawler:
                 const level1Menus = [];
                 const menuTextSet = new Set();
                 const menuSelectors = [
+                    '.el-tabs__item.is-left',  // 左侧垂直 Tab 菜单
+                    '.el-tabs__item.is-left > div',  // 左侧垂直 Tab 菜单内的文本容器
                     '.el-submenu > .el-submenu__title',
                     '.menu-item',
                     '.nav-item',
@@ -668,7 +732,7 @@ class SPACrawler:
                 for (const selector of menuSelectors) {
                     document.querySelectorAll(selector).forEach(el => {
                         const text = (el.innerText || '').trim();
-                        if (text && text !== '首页视图' && text.length < 50 && !menuTextSet.has(text)) {
+                        if (text && text.length < 50 && !menuTextSet.has(text)) {
                             menuTextSet.add(text);
                             level1Menus.push({ text: text, level: 1 });
                         }

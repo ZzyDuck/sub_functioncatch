@@ -3,7 +3,11 @@ import os
 import asyncio
 from typing import Any, List
 
+from dotenv import load_dotenv
 import requests
+
+# 加载 .env 文件
+load_dotenv()
 
 from schema import FeatureItem
 from extractors.feature_extractor import FeatureExtractor
