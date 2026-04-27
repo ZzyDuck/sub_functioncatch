@@ -117,7 +117,7 @@ class MenuCrawler:
                     
                     # 等待URL变化
                     after_url = before_url
-                    for i in range(15):  # 延长等待时间
+                    for i in range(5):  # 延长等待时间
                         await page.wait_for_timeout(1000)
                         current_page_url = page.url
                         if current_page_url != before_url:
@@ -200,9 +200,9 @@ class MenuCrawler:
                                 print(f"   📍 滚动到二级菜单元素")
                                 
                                 if has_submenu:
-                                    # 先创建二级菜单节点（不包含 URL，因为展开菜单本身不跳转）
+                                    # 有子菜单的二级菜单不生成 URL（设置为空字符串）
                                     parent_node[menu_name]["children"][submenu_name] = {
-                                        "url": submenu_before_url,  # 当前页面 URL
+                                        "url": "",  # 不生成 URL
                                         "children": {}
                                     }
                                     print(f"   📍 创建二级菜单节点: {submenu_name}")
@@ -255,7 +255,7 @@ class MenuCrawler:
                                                 level3_url_changed = False
                                                 print(f"   📍 点击前URL: {level3_before_url}")
                                                 
-                                                for k in range(6):
+                                                for k in range(5):
                                                     await page.wait_for_timeout(1000)
                                                     current_level3_url = page.url
                                                     # print(f"   📍 第 {k+1} 次检查URL: {current_level3_url}")
@@ -292,7 +292,7 @@ class MenuCrawler:
                                     url_changed = False
                                     print(f"   📍 点击前URL: {submenu_before_url}")
                                     
-                                    for j in range(15):  # 延长等待时间
+                                    for j in range(5):  # 延长等待时间
                                         await page.wait_for_timeout(1000)
                                         current_sub_url = page.url
                                         print(f"   📍 第 {j+1} 次检查URL: {current_sub_url}")
