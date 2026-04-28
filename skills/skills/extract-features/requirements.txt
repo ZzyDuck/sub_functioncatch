@@ -1,0 +1,9 @@
+# 基础依赖
+python-dotenv
+requests
+
+# 浏览器自动化
+playwright
+
+# 项目内部模块
+# 注意：extractors 模块需要确保在 Python 路径中可用

@@ -1,0 +1,286 @@
+{
+  "首页": {
+    "url": "/home",
+    "description": "系统首页仪表板，展示概览信息和快捷入口",
+    "children": {
+      "首页视图": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+        "description": "系统仪表板主视图，显示统计信息和快捷操作入口"
+      },
+      "用户中心": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+        "description": "用户管理模块，包含用户账号管理、身份治理和同步中心",
+        "children": {
+          "用户管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+            "description": "用户账号的增删改查操作，包括用户列表、用户信息编辑、状态管理等"
+          },
+          "身份治理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+            "description": "身份治理管理，包括身份信息管理、账号绑定和身份验证设置"
+          },
+          "同步中心": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/user/syncManage",
+            "description": "用户数据同步管理，支持与外部系统的用户数据同步配置"
+          }
+        }
+      },
+      "认证中心": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+        "description": "认证策略管理模块",
+        "children": {
+          "认证策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+            "description": "配置各种认证策略，包括静态口令、动态口令、匹配账号登录等方式的启用和参数配置"
+          }
+        }
+      },
+      "访问控制": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+        "description": "访问控制策略管理，包括登录控制、密码策略、远程访问和特殊访问策略",
+        "children": {
+          "登录策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+            "description": "配置用户登录相关策略，包括登录限制、会话管理、登录失败处理等"
+          },
+          "密码策略": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+            "description": "配置密码复杂度要求、密码有效期、密码历史记录等安全策略"
+          },
+          "远程访问管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage",
+            "description": "管理远程访问策略，包括VPN、SSH等远程登录方式的安全配置"
+          },
+          "金库策略": {
+            "url": "",
+            "description": "特权账号访问控制管理，包括审批流程和操作授权",
+            "children": {
+              "审批关系管理": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+                "description": "配置金库访问的审批关系，包括审批人设置和审批流程定义"
+              },
+              "登录类策略": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+                "description": "配置登录类操作的金库策略，包括特权账号登录审批流程"
+              },
+              "操作类策略": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+                "description": "配置敏感操作的金库保护策略，如数据库操作、配置修改等"
+              },
+              "门户审批": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+                "description": "门户访问的审批管理，包括工单审批和临时权限授予"
+              },
+              "金库应急": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultEmergency",
+                "description": "金库应急访问管理，用于紧急情况下的特权访问申请和审批"
+              },
+              "金库预约": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/reservation",
+                "description": "金库访问预约管理，提前预约特权账号的使用时间"
+              },
+              "金库白名单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist",
+                "description": "配置金库白名单IP或终端，允许特定来源的访问请求"
+              }
+            }
+          }
+        }
+      },
+      "深度权限": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+        "description": "精细化的权限管理模块，包括菜单、角色、功能等权限配置",
+        "children": {
+          "菜单管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+            "description": "系统菜单的权限配置管理，包括菜单项的显示控制、图标配置等"
+          },
+          "角色授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+            "description": "角色权限管理，为角色分配不同的功能权限和菜单权限"
+          },
+          "访问授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+            "description": "资源访问权限管理，控制用户对系统资源的访问权限"
+          },
+          "属性授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/attrPermission",
+            "description": "属性级别权限管理，控制用户对特定数据属性的访问权限"
+          },
+          "委托授权": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage",
+            "description": "权限委托管理，用户可以将自己的权限委托给其他用户代理操作"
+          }
+        }
+      },
+      "应用资源": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+        "description": "应用资源和第三方应用集成管理",
+        "children": {
+          "应用管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+            "description": "应用系统注册和管理，包括应用基本信息、应用图标、访问配置等"
+          },
+          "应用登录": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+            "description": "应用单点登录配置，管理用户通过统一认证登录到各个应用系统"
+          },
+          "工具管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+            "description": "系统工具配置管理，包括辅助工具和插件管理"
+          }
+        }
+      },
+      "统一配置": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+        "description": "系统统一配置管理，包括基础配置、安全设置和开发选项",
+        "children": {
+          "基础配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+            "description": "系统基础参数配置，包括系统名称、Logo、默认语言等基本设置"
+          },
+          "安全配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+            "description": "系统安全相关配置，包括登录安全、会话超时、安全策略等"
+          },
+          "数据模型": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+            "description": "数据模型配置，定义用户、组织等实体的数据结构"
+          },
+          "模版配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate",
+            "description": "系统模版配置，包括邮件模版、短信模版、通知模版等"
+          },
+          "组件管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+            "description": "前端组件配置管理，包括表单组件、列表组件等UI组件的配置"
+          },
+          "开发配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+            "description": "开发人员选项配置，包括API配置、Webhook配置等开发相关设置"
+          },
+          "加密机配置": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+            "description": "加密机设备配置，管理密码加密、密钥存储等安全硬件设备"
+          },
+          "插件管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+            "description": "系统插件管理，扩展系统功能的插件安装、卸载和配置"
+          }
+        }
+      },
+      "平台管理": {
+        "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+        "description": "平台运维管理，包括会话监控、缓存管理、数据清理和日志查看",
+        "children": {
+          "会话管理": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/monitorSession",
+            "description": "用户会话监控管理，查看当前在线用户、会话状态，支持强制下线操作"
+          },
+          "缓存刷新": {
+            "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+            "description": "系统缓存管理，支持手动刷新各种缓存确保数据一致性"
+          },
+          "数据清理": {
+            "url": "",
+            "description": "系统数据清理功能",
+            "children": {
+              "中间件日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+                "description": "查看和清理中间件运行日志"
+              },
+              "清理记录": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/dataCleanRecord",
+                "description": "数据清理操作记录查询"
+              },
+              "操作日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog",
+                "description": "用户操作日志查询和导出"
+              },
+              "系统运行日志": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+                "description": "系统运行日志查看和分析"
+              }
+            }
+          },
+          "日志中心": {
+            "url": "",
+            "description": "集中日志管理功能",
+            "children": {
+              "日志管理": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logManagement",
+                "description": "系统日志的统一管理和配置"
+              },
+              "日志转发": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward",
+                "description": "日志转发配置，将日志发送到外部日志收集系统"
+              }
+            }
+          },
+          "流程管理": {
+            "url": "",
+            "description": "工作流程管理",
+            "children": {
+              "发起工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmList",
+                "description": "发起新的工作流工单，如权限申请、账号开通等"
+              },
+              "我的工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+                "description": "查看我发起和待处理的工单列表"
+              },
+              "全量工单": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTableAll",
+                "description": "查看所有工单（管理员权限）"
+              }
+            }
+          },
+          "数据备份": {
+            "url": "",
+            "description": "数据备份和恢复管理",
+            "children": {
+              "备份配置": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup",
+                "description": "备份策略配置，包括备份周期、备份内容、存储位置等"
+              },
+              "备份查询": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackupSearchList",
+                "description": "备份记录查询和数据恢复操作"
+              }
+            }
+          },
+          "许可管理": {
+            "url": "",
+            "description": "软件许可和授权管理",
+            "children": {
+              "激活授权": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/activateAuthorize",
+                "description": "产品激活和授权码管理"
+              },
+              "历史授权": {
+                "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/historyAuthorize",
+                "description": "查看历史授权记录和授权变更记录"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "系统概述": {
+    "system_name": "AIS-IAM",
+    "full_name": "统一身份认证与访问管理系统",
+    "company": "亚信科技（成都）有限公司",
+    "description": "企业级统一身份认证和访问管理平台，提供用户身份管理、认证策略、权限控制、应用集成等功能"
+  },
+  "主要功能模块": [
+    "用户身份管理",
+    "认证策略配置",
+    "访问权限控制",
+    "特权账号管理（金库）",
+    "精细化权限管理",
+    "应用资源集成",
+    "系统配置管理",
+    "运维监控管理"
+  ]
+}
