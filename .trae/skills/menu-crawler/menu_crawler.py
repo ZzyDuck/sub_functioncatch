@@ -16,7 +16,7 @@ class MenuCrawler:
         
         self.visited_urls: Set[str] = set()
         self.visited_menus: Set[str] = set()
-        self.menu_tree: Dict = {"首页": {"url": "/home", "children": {}}}
+        self.menu_tree: Dict = {}  # 不设置默认的"首页"节点
     
     def _normalize_hash_url(self, url: str) -> str:
         """规范化SPA的hash路由URL"""
@@ -65,8 +65,8 @@ class MenuCrawler:
                 initial_url = self._normalize_hash_url(self.start_url)
                 print(f"\n📍 开始爬取: {initial_url}")
             
-            # 开始构建菜单树
-            await self._build_menu_tree(page, initial_url, self.menu_tree["首页"]["children"])
+            # 开始构建菜单树，直接构建到根节点
+            await self._build_menu_tree(page, initial_url, self.menu_tree)
             
             await browser.close()
         
@@ -134,10 +134,19 @@ class MenuCrawler:
                     print(f"   一级菜单: {menu_name} -> {menu_url}")
                     
                     # 创建菜单项
-                    parent_node[menu_name] = {
-                        "url": menu_url,
-                        "children": {}
-                    }
+                    # 如果 parent_node 是根节点（没有 'url' 和 'children' 键），直接创建一级菜单项
+                    if "url" in parent_node or "children" in parent_node:
+                        # 不是根节点，创建完整的菜单项
+                        parent_node[menu_name] = {
+                            "url": menu_url,
+                            "children": {}
+                        }
+                    else:
+                        # 是根节点，直接创建一级菜单项
+                        parent_node[menu_name] = {
+                            "url": menu_url,
+                            "children": {}
+                        }
                     
                     # 提取二级菜单
                     level2_menus = await self._extract_level2_menus(page)
@@ -339,6 +348,15 @@ class MenuCrawler:
                                 await page.wait_for_timeout(self.wait_time)
                             except:
                                 pass
+                    
+                    # 检查一级菜单的URL是否与第一个二级菜单的URL相同
+                    level2_items = parent_node[menu_name]["children"]
+                    if level2_items:
+                        first_level2_key = next(iter(level2_items))
+                        first_level2_url = level2_items[first_level2_key].get("url", "")
+                        if parent_node[menu_name]["url"] == first_level2_url:
+                            # 如果一级菜单URL与第一个二级菜单URL相同，移除一级菜单的URL
+                            parent_node[menu_name]["url"] = ""
                     
                     # 返回原页面
                     await page.goto(current_url, wait_until='networkidle', timeout=10000)

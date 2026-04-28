@@ -1,10 +1,15 @@
 import json
 import os
+import sys
 import asyncio
 from typing import Any, List
 
 from dotenv import load_dotenv
 import requests
+
+# 添加项目根目录到 Python 路径
+current_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(current_dir)
 
 # 加载 .env 文件
 load_dotenv()
@@ -243,88 +248,73 @@ async def extract_features_from_url(url: str) -> List[FeatureItem]:
 def _ai_analyze_structured_data(url: str, data: dict) -> List[FeatureItem]:
     """AI 分析结构化数据，生成功能点"""
     
-    # 构建 prompt，使用 f-string 但小心处理 JSON 格式
+    # 提取按钮信息
+    buttons = data.get('buttons', [])
+    visible_buttons = [b for b in buttons if b.get('visible', True)]
+    
     prompt = f"""
-基于以下提取的页面结构化数据，分析网站功能点。
+**任务：基于页面上的按钮，生成功能点清单**
 
-## 目标 URL
+## 页面 URL
 {url}
 
 ## 页面标题
 {data.get('title', '')}
 
-## 提取到的按钮
-{json.dumps(data.get('buttons', [])[:30], ensure_ascii=False, indent=2)}
+## 页面上的按钮（共 {len(visible_buttons)} 个）
+{json.dumps(visible_buttons[:50], ensure_ascii=False, indent=2)}
 
-## 提取到的表单
-{json.dumps(data.get('forms', []), ensure_ascii=False, indent=2)}
+**重要规则：**
+1. 只根据上面列出的按钮生成功能点
+2. 不要添加任何没有在按钮列表中出现的功能
+3. 不要根据 URL 猜测功能
+4. 每个按钮生成一个功能点
 
-## 提取到的链接
-{json.dumps(data.get('links', [])[:30], ensure_ascii=False, indent=2)}
-
-## 页面标题层级
-{json.dumps(data.get('headings', []), ensure_ascii=False, indent=2)}
-
-## 菜单数据
-- 一级菜单: {json.dumps(data.get('level1Menus', []), ensure_ascii=False, indent=2)}
-- 二级菜单: {json.dumps(data.get('level2Menus', []), ensure_ascii=False, indent=2)}
-- 顶部按钮: {json.dumps(data.get('topButtons', []), ensure_ascii=False, indent=2)}
-- 页签: {json.dumps(data.get('tabs', []), ensure_ascii=False, indent=2)}
-
-## 动态内容
-- Tab 切换: {len(data.get('tabs', []))} 个
-- 弹窗: {len(data.get('popups', []))} 个
-
-## 重要规则（必须遵守）
-1. 每个一级菜单生成一个独立功能点
-2. 每个二级菜单生成一个独立功能点
-3. 每个顶部按钮生成一个独立功能点
-4. 每个 Tab 页签生成一个独立功能点
-5. 不要合并任何功能点，即使它们属于同一个模块
-
-## 输入数据说明
-- level1Menus: 一级菜单，每个都应该生成功能点
-- level2Menus: 二级菜单，每个都应该生成功能点
-- topButtons: 顶部按钮，每个都应该生成功能点
-- tabs: 页签，每个都应该生成功能点
-
-## 分析要求
-1. 细粒度提取：必须提取页面上的每一个可交互元素，包括但不限于：
-   - 按钮：登录按钮、注册按钮、搜索按钮等
-   - 输入框：用户名输入框、密码输入框、搜索输入框等
-   - 复选框/单选框：任何类型的选择框
-   - 链接：导航菜单链接、忘记密码链接等
-   - 表单：登录表单、注册表单等
-
-2. 四级层级结构：每个功能点必须归属到四级层级中
-
-3. 功能描述格式：具体描述用户操作和系统响应，格式：用户[操作][目标元素]，系统[响应行为]
+## 按钮到功能的映射规则
+- 按钮文本包含"新增/添加" → 功能名称"新增数据"，描述"用户点击「按钮文本」按钮，系统弹出新增表单"
+- 按钮文本包含"编辑/修改" → 功能名称"编辑数据"，描述"用户点击「按钮文本」按钮，系统弹出编辑表单"
+- 按钮文本包含"删除" → 功能名称"删除数据"，描述"用户点击「按钮文本」按钮，系统弹出确认删除弹窗"
+- 按钮文本包含"搜索/查询" → 功能名称"查询数据"，描述"用户点击「按钮文本」按钮，系统刷新列表"
+- 按钮文本包含"刷新" → 功能名称"刷新页面"，描述"用户点击「按钮文本」按钮，系统重新加载数据"
+- 其他按钮 → 使用按钮文本作为功能名称
 
 ## 输出格式
-[{{"module": "模块名", "function_name": "功能名称", "level1": "一级功能", "level2": "二级功能（可选）", "level3": "三级功能（可选）", "level4": "四级功能（可选）", "description": "用户点击登录按钮，系统弹出登录表单", "importance": "高/中/低"}}]
+[{{
+  "module": "{data.get('title', '')}",
+  "function_name": "功能名称",
+  "level1": "",
+  "level2": "",
+  "level3": "",
+  "level4": "",
+  "description": "用户点击「按钮文本」，系统执行操作",
+  "importance": "高/中/低",
+  "url": "{url}"
+}}]
 
 只输出 JSON 数组，不要有任何其他文字。
 """
     
     messages = [
-        {"role": "system", "content": "你是网站功能分析专家，只输出 JSON 数组。"},
+        {"role": "system", "content": "你是网站功能分析专家，只根据提供的按钮数据输出 JSON 数组。"},
         {"role": "user", "content": prompt}
     ]
     
     raw = call_ai(messages, temperature=0.2)
+    print(f"AI 原始返回: {raw[:500]}")
+    
     items = parse_json_text(raw)
     
     features = []
     for item in items:
         features.append(FeatureItem(
-            module=item.get("module", ""),
+            module=item.get("module", data.get('title', '')),
             function_name=item.get("function_name", ""),
             level1=item.get("level1", ""),
             level2=item.get("level2", ""),
             level3=item.get("level3", ""),
             level4=item.get("level4", ""),
             description=item.get("description", ""),
-            importance=item.get("importance", ""),
+            importance=item.get("importance", "中"),
             url=url,
         ))
     
