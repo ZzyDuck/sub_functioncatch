@@ -13,6 +13,38 @@ load_dotenv(env_path)
 sys.path.insert(0, root_dir)
 from feishu_service import FeishuClient
 
+def find_merge_ranges(rows, merge_columns):
+    """找出需要合并的单元格范围（从第二行开始，跳过标题行）"""
+    merges = []
+    
+    for col_idx in merge_columns:
+        if col_idx >= len(rows[0]):
+            continue
+        
+        start_row = 0
+        while start_row < len(rows):
+            current_value = rows[start_row][col_idx]
+            
+            if current_value == "":
+                start_row += 1
+                continue
+            
+            end_row = start_row
+            while end_row + 1 < len(rows) and rows[end_row + 1][col_idx] == current_value:
+                end_row += 1
+            
+            if end_row > start_row:
+                merges.append({
+                    "start_row": start_row + 1,
+                    "end_row": end_row + 1,
+                    "start_col": col_idx,
+                    "end_col": col_idx
+                })
+            
+            start_row = end_row + 1
+    
+    return merges
+
 def export_to_feishu(json_path, app_id, app_secret):
     with open(json_path, 'r', encoding='utf-8') as f:
         function_points = json.load(f)
@@ -41,6 +73,21 @@ def export_to_feishu(json_path, app_id, app_secret):
     
     print(f"正在创建飞书表格: {title}")
     spreadsheet_token = client.create_sheet_with_rows(title, headers, rows, sheet_name)
+    
+    metainfo = client.get_spreadsheet_metainfo(spreadsheet_token)
+    sheets = metainfo.get("data", {}).get("sheets", [])
+    sheet_id = sheets[0].get("sheetId")
+    
+    merge_columns = [0, 1, 2, 3]
+    merges = find_merge_ranges(rows, merge_columns)
+    
+    if merges:
+        print(f"正在合并 {len(merges)} 个单元格区域...")
+        try:
+            client.merge_cells(spreadsheet_token, sheet_id, merges)
+            print("单元格合并完成")
+        except Exception as e:
+            print(f"警告: 合并单元格失败 - {e}")
     
     url = client.sheet_url(spreadsheet_token)
     print(f"\n飞书表格创建成功！")

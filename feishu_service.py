@@ -261,3 +261,25 @@ class FeishuClient:
             temp_col, remainder = divmod(temp_col - 1, 26)
             letter = chr(65 + remainder) + letter
         return letter
+
+    def merge_cells(self, spreadsheet_token: str, sheet_id: str, merges: List[dict]) -> None:
+        """合并单元格 - 使用正确的飞书表格API"""
+        url = f"{FEISHU_BASE}/sheets/v2/spreadsheets/{spreadsheet_token}/merge_cells"
+        
+        for merge in merges:
+            start_row = merge.get("start_row", 0)
+            end_row = merge.get("end_row", 0)
+            start_col = merge.get("start_col", 0)
+            end_col = merge.get("end_col", 0)
+            
+            range_str = f"{sheet_id}!{self._col_to_letter(start_col + 1)}{start_row + 1}:{self._col_to_letter(end_col + 1)}{end_row + 1}"
+            
+            payload = {
+                "range": range_str,
+                "mergeType": "MERGE_ALL"
+            }
+            
+            response = requests.post(url, headers=self._headers(), json=payload, timeout=30)
+            data = response.json()
+            if data.get("code") != 0:
+                raise RuntimeError(f"合并单元格失败: {data}")
