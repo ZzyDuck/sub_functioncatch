@@ -1,0 +1,187 @@
+[
+  {
+    "id": "TC-ERR-001",
+    "title": "访问不存在的页面路径",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 尝试访问不存在的URL: /iam/v1/#/home/invalid",
+        "2. 验证系统响应"
+      ],
+      "expected_result": "404错误或重定向到首页",
+      "actual_result": "系统自动重定向到首页，未显示错误页面",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-002",
+    "title": "空搜索关键词",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 在搜索框输入空字符串",
+        "2. 点击搜索按钮",
+        "3. 验证结果"
+      ],
+      "expected_result": "显示全部应用或提示输入关键词",
+      "actual_result": "搜索框支持空输入，显示全部应用列表",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-003",
+    "title": "特殊字符搜索",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 在搜索框输入特殊字符: @#$%^&*()",
+        "2. 点击搜索按钮",
+        "3. 验证结果"
+      ],
+      "expected_result": "不报错，返回空结果或过滤特殊字符",
+      "actual_result": "系统正确处理特殊字符，返回空结果列表",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-004",
+    "title": "超长时间搜索关键词",
+    "module": "首页视图-异常测试",
+    "status": "FAIL",
+    "message": "验证失败",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 在搜索框输入超过100个字符的字符串",
+        "2. 验证输入是否被截断"
+      ],
+      "expected_result": "输入被截断或提示超出长度限制",
+      "actual_result": "搜索框未限制输入长度，可能导致性能问题",
+      "expected_failure": true
+    }
+  },
+  {
+    "id": "TC-ERR-005",
+    "title": "重复快速点击Tab",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 快速连续点击不同Tab标签",
+        "2. 验证页面稳定性"
+      ],
+      "expected_result": "页面稳定，无卡顿或报错",
+      "actual_result": "Tab切换流畅，无卡顿",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-006",
+    "title": "未勾选应用点击申请资源",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 不勾选任何应用",
+        "2. 点击申请资源按钮",
+        "3. 验证系统响应"
+      ],
+      "expected_result": "提示请先选择应用",
+      "actual_result": "弹出提示'请选择要申请的应用'",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-007",
+    "title": "未勾选应用点击加入组",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 不勾选任何应用",
+        "2. 点击加入组按钮",
+        "3. 验证系统响应"
+      ],
+      "expected_result": "提示请先选择应用",
+      "actual_result": "弹出提示'请选择要加入组的应用'",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-008",
+    "title": "密码到期日格式验证",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 检查密码到期日显示格式",
+        "2. 验证日期格式正确性"
+      ],
+      "expected_result": "YYYY-MM-DD格式",
+      "actual_result": "显示为'2099-12-08'，格式正确",
+      "expected_failure": false
+    }
+  },
+  {
+    "id": "TC-ERR-009",
+    "title": "页面刷新后状态保持",
+    "module": "首页视图-异常测试",
+    "status": "FAIL",
+    "message": "验证失败",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 切换到金库待审批Tab",
+        "2. 刷新页面",
+        "3. 验证Tab状态"
+      ],
+      "expected_result": "保持金库待审批Tab选中",
+      "actual_result": "页面刷新后回到默认的应用资源登录Tab，状态未保持",
+      "expected_failure": true
+    }
+  },
+  {
+    "id": "TC-ERR-010",
+    "title": "公告区域无数据时显示",
+    "module": "首页视图-异常测试",
+    "status": "PASS",
+    "message": "验证通过",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-04-30 15:00:00",
+      "steps": [
+        "1. 确认无公告数据",
+        "2. 验证公告区域显示"
+      ],
+      "expected_result": "显示'暂无数据'或类似提示",
+      "actual_result": "显示'暂无数据'，提示友好",
+      "expected_failure": false
+    }
+  }
+]

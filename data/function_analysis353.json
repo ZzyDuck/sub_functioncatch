@@ -1,0 +1,3179 @@
+[
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "用户登录信息展示",
+    "功能点描述": "展示当前登录用户名称、角色（超级管理员）及今日登录次数"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "组织机构与IP信息展示",
+    "功能点描述": "展示当前用户所属组织机构（根组织）及登录IP地址"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "密码到期日展示",
+    "功能点描述": "展示当前用户密码到期日期（如2099-12-08）"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "自审计入口",
+    "功能点描述": "点击自审计图标，查看当前用户的操作审计记录"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "公告列表展示",
+    "功能点描述": "展示系统公告信息列表，无公告时显示暂无数据"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "查看更多公告",
+    "功能点描述": "点击更多按钮，跳转至公告完整列表页面"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "切换至应用资源登录Tab",
+    "功能点描述": "点击Tab标签，切换显示应用资源登录入口及常用/自建应用列表"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "切换至金库待审批Tab",
+    "功能点描述": "点击Tab标签，切换显示金库待审批任务列表"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "切换至权限视图Tab",
+    "功能点描述": "点击Tab标签，切换显示当前用户权限概览统计"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "用户功能权限统计",
+    "功能点描述": "展示当前用户拥有的功能权限总数（如61个）"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "资源访问权限统计",
+    "功能点描述": "展示可访问资源数量和绑定从帐号数量"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "人员管理权限统计",
+    "功能点描述": "展示管理组织数量和人员主帐号数量"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "资源管理权限统计",
+    "功能点描述": "展示管理应用资源数量及涉敏资源数量"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "主帐号活跃情况统计",
+    "功能点描述": "展示活跃/非活跃主帐号数及在线用户数"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "搜索应用",
+    "功能点描述": "输入应用名称或标签，筛选匹配的应用资源"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "申请资源",
+    "功能点描述": "点击按钮，打开资源申请弹窗，申请访问指定应用资源"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "加入组",
+    "功能点描述": "勾选应用后点击按钮，将选中应用加入应用组"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "可用性探测",
+    "功能点描述": "点击按钮，检测选中应用的可用性状态"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "按使用频率排序应用",
+    "功能点描述": "点击使用频率按钮，按使用频率对应用列表排序"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "按访问时间排序应用",
+    "功能点描述": "点击访问时间按钮，按最近访问时间对应用列表排序"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "切换至常用应用子Tab",
+    "功能点描述": "点击Tab标签，切换显示常用应用列表"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "切换至自建应用子Tab",
+    "功能点描述": "点击Tab标签，切换显示自建应用列表及登录方式"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "展开组织树",
+    "功能点描述": "点击展开按钮，显示左侧组织架构树形结构"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "自建应用登录方式选择",
+    "功能点描述": "下拉选择自建应用的登录方式（当前浏览器/指定帐号等）"
+  },
+  {
+    "level1": "首页视图",
+    "level2": "首页",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+    "功能点": "自建应用勾选",
+    "功能点描述": "勾选应用卡片复选框，用于批量加入组或可用性探测"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "搜索用户",
+    "功能点描述": "输入用户姓名或登录帐号，筛选匹配的用户列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "高级筛选用户",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选用户"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增用户帐号",
+    "功能点描述": "打开右侧抽屉面板，填写用户姓名、登录帐号、工号、邮箱、手机号等字段创建新帐号"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-是否自然人主帐号",
+    "功能点描述": "在新增帐号表单中设置该帐号是否为自然人主帐号"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-员工类型选择",
+    "功能点描述": "在新增帐号表单中选择员工类型（正式/外包/实习等）"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-帐号类型选择",
+    "功能点描述": "在新增帐号表单中选择帐号类型（主帐号/从帐号等）"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-组织机构选择",
+    "功能点描述": "在新增帐号表单中选择用户所属的组织机构"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-生效/失效时间设置",
+    "功能点描述": "在新增帐号表单中设置帐号的生效时间和失效时间"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-证件类型与号码",
+    "功能点描述": "在新增帐号表单中选择证件类型并填写证件号码"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-金库审批人设置",
+    "功能点描述": "在新增帐号表单中设置该用户是否作为金库审批人及默认审批人"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增帐号-允许多终端同时在线",
+    "功能点描述": "在新增帐号表单中设置是否允许同一帐号多终端同时在线"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "批量删除用户",
+    "功能点描述": "勾选多个用户后点击删除按钮，批量删除选中用户"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "批量解锁用户",
+    "功能点描述": "勾选多个被锁定的用户后点击解锁按钮，批量解锁帐号"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "批量加锁用户",
+    "功能点描述": "勾选多个用户后点击加锁按钮，批量锁定帐号禁止登录"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "导入用户",
+    "功能点描述": "点击导入按钮，上传Excel/CSV文件批量导入用户帐号"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "导出用户",
+    "功能点描述": "点击导出按钮，将当前用户列表导出为Excel/CSV文件"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "用户授权",
+    "功能点描述": "勾选用户后点击授权按钮，为用户分配角色和权限"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "批量操作",
+    "功能点描述": "点击批量操作按钮，对选中用户执行批量移动组织等操作"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "用户帐号状态开关",
+    "功能点描述": "切换用户行内的状态开关，启用或停用该用户帐号"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "用户列表表格",
+    "功能点描述": "展示用户姓名、登录帐号、工作邮箱、手机号码、帐号类型、状态等列"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "切换至帐号Tab",
+    "功能点描述": "点击Tab标签，切换显示帐号管理列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "切换至组织Tab",
+    "功能点描述": "点击Tab标签，切换显示组织管理列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "组织搜索",
+    "功能点描述": "输入组织名称/组织编码，筛选匹配的组织列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "新增组织",
+    "功能点描述": "点击新增按钮，创建新的组织机构节点"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "删除组织",
+    "功能点描述": "勾选组织后点击删除按钮，删除选中的组织机构"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "导入组织",
+    "功能点描述": "点击导入按钮，上传文件批量导入组织机构数据"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "导出组织",
+    "功能点描述": "点击导出按钮，将组织列表导出为文件"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "组织列表表格",
+    "功能点描述": "展示组织名称、组织编码、外部组织标识、负责人、描述、组织路径、全路径名称等列"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "修改组织",
+    "功能点描述": "点击行内修改按钮，编辑组织机构信息"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "删除组织（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个组织机构"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "左侧组织树导航",
+    "功能点描述": "点击左侧组织树节点，筛选该组织下的用户列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "搜索组织树",
+    "功能点描述": "输入组织名称，在左侧树中搜索并定位组织节点"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "切换至用户组Tab",
+    "功能点描述": "点击Tab标签，切换左侧面板显示用户组树形结构"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "收缩/展开左侧树面板",
+    "功能点描述": "点击收缩按钮，收起或展开左侧组织树/用户组面板"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "数据模型配置入口",
+    "功能点描述": "点击数据模型按钮，配置用户/组织的扩展属性字段"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "用户管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/userManage",
+    "功能点": "导入记录查看",
+    "功能点描述": "点击导入记录按钮，查看历史导入操作的执行结果"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "切换至综合视图Tab",
+    "功能点描述": "点击Tab标签，切换显示身份治理综合视图看板"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "切换至治理规则设置Tab",
+    "功能点描述": "点击Tab标签，切换显示治理规则配置列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "搜索治理规则",
+    "功能点描述": "输入规则名称，筛选匹配的治理规则列表"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "新增治理规则",
+    "功能点描述": "点击新增按钮，创建身份治理规则（含执行范围、状态、执行周期）"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "删除治理规则",
+    "功能点描述": "勾选规则后点击删除按钮，批量删除治理规则"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "治理规则列表表格",
+    "功能点描述": "展示规则名称、执行范围、状态、执行周期、上次执行时间等列"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "切换至历史数据Tab",
+    "功能点描述": "点击Tab标签，切换显示治理规则执行的历史记录"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "搜索历史执行记录",
+    "功能点描述": "输入规则名称，筛选匹配的历史执行记录"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "身份治理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/identityManage",
+    "功能点": "历史执行记录表格",
+    "功能点描述": "展示规则名称、执行状态、检测总数、命中数量、执行开始/完成时间等列"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "同步中心",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/syncManage",
+    "功能点": "同步中心说明展示",
+    "功能点描述": "展示同步中心功能说明：连接身份源和下游数据，实现组织信息和成员信息同步"
+  },
+  {
+    "level1": "用户中心",
+    "level2": "同步中心",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/user/syncManage",
+    "功能点": "创建同步任务",
+    "功能点描述": "点击创建同步任务按钮，配置身份源与下游数据的同步规则"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "搜索认证策略",
+    "功能点描述": "输入策略名称，筛选匹配的认证策略列表"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "新增认证策略",
+    "功能点描述": "点击新增按钮，创建新的认证策略（含策略名称、归属应用、策略描述等）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "删除认证策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除认证策略"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "启用认证策略",
+    "功能点描述": "勾选已停用的策略后点击启用按钮，批量启用认证策略"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "停用认证策略",
+    "功能点描述": "勾选已启用的策略后点击停用按钮，批量停用认证策略"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "认证策略列表表格",
+    "功能点描述": "展示策略名称、归属应用、策略描述、默认策略、策略状态等列"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "策略状态开关",
+    "功能点描述": "切换策略行内的状态开关，启用或停用该认证策略"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "绑定策略",
+    "功能点描述": "点击行内绑定按钮，将认证策略绑定到用户/用户组/组织"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "修改认证策略",
+    "功能点描述": "点击行内修改按钮，编辑认证策略配置"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "查看策略详情",
+    "功能点描述": "点击行内详情按钮，查看认证策略的详细配置信息"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "进入认证方式管理",
+    "功能点描述": "点击认证方式管理按钮，进入认证方式列表页面"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "搜索认证方式",
+    "功能点描述": "输入认证方式名称/分类等关键字，筛选匹配的认证方式列表"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "新增认证方式",
+    "功能点描述": "点击新增按钮，创建新的认证方式（含名称、编码、分类、强度级别）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "删除认证方式",
+    "功能点描述": "勾选认证方式后点击删除按钮，批量删除认证方式"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "启用认证方式",
+    "功能点描述": "勾选已停用的认证方式后点击启用按钮，批量启用"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "停用认证方式",
+    "功能点描述": "勾选已启用的认证方式后点击停用按钮，批量停用"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "认证方式列表表格",
+    "功能点描述": "展示认证方式名称、编码、分类、状态、强度级别等列"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "修改认证方式",
+    "功能点描述": "点击行内修改按钮，编辑认证方式配置"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "认证方式管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "认证方式状态开关",
+    "功能点描述": "切换认证方式行内的状态开关，启用或停用该认证方式"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "进入全局策略配置",
+    "功能点描述": "点击全局策略按钮，打开系统全局策略配置弹窗"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "配置静态口令登录方式",
+    "功能点描述": "开关启用/停用静态口令登录，并选择支持的登录标识（帐号/手机号/邮箱/工号/证件号码）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "配置动态口令登录方式",
+    "功能点描述": "开关启用/停用动态口令登录，并选择动态口令接收方式（手机号/邮箱）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "配置匹配帐号登录方式",
+    "功能点描述": "开关启用/停用匹配帐号登录，设置连续输错次数、时间窗口和锁定时长"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "设置默认登录方式",
+    "功能点描述": "选择系统默认的登录方式（静态口令/动态口令/匹配帐号登录）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "系统全局策略",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "预览登录页面",
+    "功能点描述": "点击预览按钮，预览当前全局策略配置下的登录页面效果"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "优先级配置",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "配置认证策略优先级",
+    "功能点描述": "拖拽排序用户策略、用户组策略、组织策略的优先级顺序（从高到低）"
+  },
+  {
+    "level1": "认证中心",
+    "level2": "认证策略",
+    "level3": "全局策略",
+    "level4": "多终端配置",
+    "url": "http://10.28.149.50:9432/iam/v1/#/auth/strategy",
+    "功能点": "配置多终端同时登录策略",
+    "功能点描述": "开关启用/停用多终端同时登录策略，选择保护模式（保护后登录者/保护先登录者）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "切换至登录控制策略Tab",
+    "功能点描述": "点击Tab标签，切换显示登录控制策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "搜索登录控制策略",
+    "功能点描述": "输入策略名称，筛选匹配的登录控制策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "筛选登录控制策略",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选登录控制策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "新增登录控制策略",
+    "功能点描述": "点击新增按钮，创建新的登录控制策略（含策略名称、策略类型、策略描述等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "删除登录控制策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除登录控制策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "登录控制策略列表表格",
+    "功能点描述": "展示策略名称、策略类型、策略状态、默认策略、策略描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "登录控制策略状态开关",
+    "功能点描述": "切换策略行内的状态开关，启用或停用该登录控制策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "查看登录控制策略详情",
+    "功能点描述": "点击行内详情按钮，查看登录控制策略的详细配置信息"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "登录控制策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "修改登录控制策略",
+    "功能点描述": "点击行内修改按钮，编辑登录控制策略配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "终端安全策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "切换至终端安全策略Tab",
+    "功能点描述": "点击Tab标签，切换显示终端安全策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "终端安全策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "新增终端安全策略",
+    "功能点描述": "点击新增按钮，创建新的终端安全策略（含策略名称、策略状态、策略描述等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "终端安全策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "删除终端安全策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除终端安全策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "终端安全策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "终端安全策略列表表格",
+    "功能点描述": "展示策略名称、策略状态、策略描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "名单管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "切换至名单管理Tab",
+    "功能点描述": "点击Tab标签，切换显示名单管理列表（白名单/黑名单）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "名单管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "新增名单",
+    "功能点描述": "点击新增按钮，创建白名单或黑名单条目（含名单名称、名单类型、名单状态、名单描述）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "名单管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "删除名单",
+    "功能点描述": "勾选名单后点击删除按钮，批量删除名单条目"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "名单管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "名单列表表格",
+    "功能点描述": "展示名单名称、名单类型、名单状态、名单描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "用户策略查询",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "切换至用户策略查询Tab",
+    "功能点描述": "点击Tab标签，切换显示用户策略查询面板"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "用户策略查询",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "查询用户策略",
+    "功能点描述": "点击查询按钮，按条件查询用户绑定的登录策略信息"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "登录策略",
+    "level3": "用户策略查询",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/accessStrategy",
+    "功能点": "用户策略查询列表表格",
+    "功能点描述": "展示策略名称、策略类型、策略状态、创建时间、策略描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "搜索密码策略",
+    "功能点描述": "输入策略名称，筛选匹配的密码策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "筛选密码策略",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选密码策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "新增密码策略",
+    "功能点描述": "点击新增按钮，创建新的密码策略（含策略名称、策略类型、策略描述等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "删除密码策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除密码策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "密码策略列表表格",
+    "功能点描述": "展示策略名称、策略类型（应用资源/主帐号）、默认策略、策略描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "绑定密码策略",
+    "功能点描述": "点击行内绑定按钮，将密码策略绑定到用户/用户组/组织"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "修改密码策略",
+    "功能点描述": "点击行内修改按钮，编辑密码策略配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "密码策略",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/pwdStrategy",
+    "功能点": "删除密码策略（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个密码策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "远程访问管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage",
+    "功能点": "筛选远程访问",
+    "功能点描述": "点击筛选按钮，展开筛选面板，按条件筛选远程访问配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "远程访问管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage",
+    "功能点": "新增远程访问",
+    "功能点描述": "点击新增按钮，创建新的远程访问配置（含名称、访问类型、厂商、描述等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "远程访问管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage",
+    "功能点": "删除远程访问",
+    "功能点描述": "勾选远程访问配置后点击删除按钮，批量删除远程访问配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "远程访问管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/remoteAccessManage",
+    "功能点": "远程访问列表表格",
+    "功能点描述": "展示名称、访问类型、厂商、描述等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "搜索审批关系",
+    "功能点描述": "输入关系名称，筛选匹配的审批关系列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "筛选审批关系",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选审批关系"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "导入审批关系",
+    "功能点描述": "点击导入按钮，上传文件批量导入审批关系数据"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "ID查询审批关系",
+    "功能点描述": "点击ID查询按钮，通过唯一标识查询审批关系"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "新增审批关系",
+    "功能点描述": "点击新增按钮，创建新的审批关系（含关系名称、操作者类型、操作用户、审批人等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "删除审批关系",
+    "功能点描述": "勾选审批关系后点击删除按钮，批量删除审批关系"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "审批关系列表表格",
+    "功能点描述": "展示关系名称、操作者类型、操作用户、审批人等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "修改审批关系",
+    "功能点描述": "点击行内修改按钮，编辑审批关系配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "审批关系管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/approveRelation",
+    "功能点": "删除审批关系（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个审批关系"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "搜索登录类策略",
+    "功能点描述": "输入策略名称，筛选匹配的登录类策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "新增登录类策略",
+    "功能点描述": "点击新增按钮，创建新的登录类策略（含策略名称、资源类型、资源帐号、审批方式、触发条件等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "删除登录类策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除登录类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "登录类策略列表表格",
+    "功能点描述": "展示序号、策略名称、资源类型、资源帐号、审批方式、触发条件、策略描述、策略状态等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "登录类策略状态开关",
+    "功能点描述": "切换策略行内的状态开关，启用或停用该登录类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "修改登录类策略",
+    "功能点描述": "点击行内修改按钮，编辑登录类策略配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "登录类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/loginStrategy",
+    "功能点": "删除登录类策略（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个登录类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "搜索操作类策略",
+    "功能点描述": "输入策略名称，筛选匹配的操作类策略列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "新增操作类策略",
+    "功能点描述": "点击新增按钮，创建新的操作类策略（含策略名称、资源类型、金库场景、审批方式、授权方式等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "删除操作类策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除操作类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "操作类策略列表表格",
+    "功能点描述": "展示序号、策略名称、资源类型、金库场景、审批方式、授权方式、策略描述、策略状态等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "操作类策略状态开关",
+    "功能点描述": "切换策略行内的状态开关，启用或停用该操作类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "修改操作类策略",
+    "功能点描述": "点击行内修改按钮，编辑操作类策略配置"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "操作类策略",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/actionStrategy",
+    "功能点": "删除操作类策略（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个操作类策略"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库申请",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "切换至我的金库申请Tab",
+    "功能点描述": "点击Tab标签，切换显示当前用户提交的金库申请列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库申请",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "搜索金库申请",
+    "功能点描述": "输入金库流水/资源名称/审批人/操作内容，筛选匹配的金库申请列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库申请",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "筛选金库申请",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选金库申请"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库申请",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "金库申请列表表格",
+    "功能点描述": "展示金库流水、资源类型、资源名称、操作内容、审批方式、审批人、金库申请时间、审批时间、审批结果等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "切换至我的金库审批Tab",
+    "功能点描述": "点击Tab标签，切换显示待当前用户审批的金库申请列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "搜索金库审批",
+    "功能点描述": "输入流水号/操作人/资源帐号或名称/操作内容，筛选匹配的金库审批列表"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "筛选金库审批",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选金库审批"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "同意金库审批",
+    "功能点描述": "勾选待审批记录后点击同意按钮，批量同意金库申请"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "拒绝金库审批",
+    "功能点描述": "勾选待审批记录后点击拒绝按钮，批量拒绝金库申请"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "门户审批",
+    "level4": "我的金库审批",
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/portalApproval",
+    "功能点": "金库审批列表表格",
+    "功能点描述": "展示流水号、操作人、资源帐号、资源类型、资源名称、操作内容、审批方式、金库申请时间、金库验证时间、金库验证结果等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库应急",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultEmergency",
+    "功能点": "登录类金库应急切换",
+    "功能点描述": "一键开启/关闭登录类金库应急模式，开启后登录类敏感场景操作不再触发金库验证"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库应急",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultEmergency",
+    "功能点": "IAM操作金库应急切换",
+    "功能点描述": "一键开启/关闭IAM操作金库应急模式，开启后IAM操作类敏感场景不再触发金库验证"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库预约",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/reservation",
+    "功能点": "筛选金库预约",
+    "功能点描述": "点击筛选按钮，展开筛选面板，按条件筛选金库预约记录"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库预约",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/reservation",
+    "功能点": "预约申请",
+    "功能点描述": "点击预约申请按钮，创建金库预约（含资源类型、资源名称、预约类型、预约对象、预约生效/失效时间等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库预约",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/reservation",
+    "功能点": "金库预约列表表格",
+    "功能点描述": "展示资源类型、资源名称、资源信息、预约类型、预约对象、预约生效时间、预约失效时间、预约操作时间等列"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库白名单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist",
+    "功能点": "筛选金库白名单",
+    "功能点描述": "点击筛选按钮，展开筛选面板，按条件筛选金库白名单记录"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库白名单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist",
+    "功能点": "新增白名单",
+    "功能点描述": "点击新增按钮，添加金库白名单条目（含主帐号、姓名、手机号、组织机构、资源类型、资源名称等）"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库白名单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist",
+    "功能点": "批量删除白名单",
+    "功能点描述": "勾选白名单条目后点击批量删除按钮，批量删除金库白名单"
+  },
+  {
+    "level1": "访问控制",
+    "level2": "金库策略",
+    "level3": "金库白名单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/accessControl/vault/vaultWhitelist",
+    "功能点": "金库白名单列表表格",
+    "功能点描述": "展示主帐号、姓名、手机号、组织机构、资源类型、资源名称等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "查询菜单",
+    "功能点描述": "输入菜单名称，查询匹配的菜单按钮列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "新增菜单",
+    "功能点描述": "点击新增按钮，创建新的菜单或按钮节点（含菜单按钮图标、名称、是否启用、排序、路径、上级菜单、类型、描述等）"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "删除菜单",
+    "功能点描述": "勾选菜单后点击删除按钮，批量删除菜单按钮"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "导入菜单",
+    "功能点描述": "点击导入按钮，上传文件批量导入菜单按钮数据"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "导出菜单",
+    "功能点描述": "点击导出按钮，将菜单按钮列表导出为文件"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "菜单列表表格",
+    "功能点描述": "以树形结构展示菜单按钮图标、菜单按钮名称、是否启用、排序、路径、上级菜单、类型、描述等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "修改菜单",
+    "功能点描述": "点击行内修改按钮，编辑菜单按钮配置"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "菜单管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/menuManage",
+    "功能点": "删除菜单（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个菜单按钮"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至功能角色管理Tab",
+    "功能点描述": "点击Tab标签，切换显示功能角色管理列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至数据角色管理Tab",
+    "功能点描述": "点击Tab标签，切换显示数据角色管理列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至岗位管理Tab",
+    "功能点描述": "点击Tab标签，切换显示岗位管理列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至职级管理Tab",
+    "功能点描述": "点击Tab标签，切换显示职级管理列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至权限绑定子Tab",
+    "功能点描述": "点击子Tab标签，切换显示权限绑定配置面板"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "切换至权限修改子Tab",
+    "功能点描述": "点击子Tab标签，切换显示权限修改配置面板"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "选择被授权用户",
+    "功能点描述": "点击选择用户按钮，弹窗选择需要授权的用户帐号范围"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "移除已选帐号",
+    "功能点描述": "点击移除按钮，移除已选择的被授权用户帐号"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "已选帐号取值范围表格",
+    "功能点描述": "展示已选帐号的取值范围、取值类型等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "菜单按钮权限配置",
+    "功能点描述": "在菜单权限树中勾选菜单按钮，配置允许权限、允许继续授权、禁止权限"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "用户管理权限配置",
+    "功能点描述": "配置被授权用户对用户管理功能的操作权限"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "资源管理权限配置",
+    "功能点描述": "配置被授权用户对资源管理功能的操作权限"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "功能角色配置",
+    "功能点描述": "配置被授权用户关联的功能角色"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "数据角色配置",
+    "功能点描述": "配置被授权用户关联的数据角色"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "岗位配置",
+    "功能点描述": "配置被授权用户关联的岗位"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "职级配置",
+    "功能点描述": "配置被授权用户关联的职级"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "菜单权限树形配置",
+    "功能点描述": "以树形结构展示菜单目录，配置每个菜单的描述、允许权限、允许继续授权、禁止权限"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "保存权限配置",
+    "功能点描述": "点击保存按钮，保存当前角色授权配置"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "角色授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/rolePermission",
+    "功能点": "重置权限配置",
+    "功能点描述": "点击重置按钮，重置当前角色授权配置到初始状态"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "切换至权限绑定Tab",
+    "功能点描述": "点击Tab标签，切换显示访问权限绑定配置面板"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "切换至权限修改Tab",
+    "功能点描述": "点击Tab标签，切换显示访问权限修改配置面板"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "选择被授权用户",
+    "功能点描述": "点击选择用户按钮，弹窗选择需要授权访问的用户帐号范围"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "移除已选帐号",
+    "功能点描述": "点击移除按钮，移除已选择的被授权用户帐号"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "已选帐号取值范围表格",
+    "功能点描述": "展示已选帐号的取值范围、取值类型等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "设置授权时限",
+    "功能点描述": "设置访问授权的有效期限"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "选择授权资源",
+    "功能点描述": "点击选择资源按钮，弹窗选择需要授权访问的资源范围"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "移除已选资源",
+    "功能点描述": "点击移除按钮，移除已选择的授权资源"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "已选资源取值范围表格",
+    "功能点描述": "展示已选资源的取值范围、取值类型等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "保存访问授权",
+    "功能点描述": "点击保存按钮，保存当前访问授权配置"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "访问授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/accessPermission",
+    "功能点": "重置访问授权",
+    "功能点描述": "点击重置按钮，重置当前访问授权配置到初始状态"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "属性授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/attrPermission",
+    "功能点": "新增属性授权策略",
+    "功能点描述": "点击新增按钮，创建属性授权策略（含策略名称、策略描述、有效期、状态等）"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "属性授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/attrPermission",
+    "功能点": "删除属性授权策略",
+    "功能点描述": "勾选策略后点击删除按钮，批量删除属性授权策略"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "属性授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/attrPermission",
+    "功能点": "属性授权策略列表表格",
+    "功能点描述": "展示策略名称、策略描述、有效期、状态等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "委托授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage",
+    "功能点": "搜索委托实体",
+    "功能点描述": "输入实体名称、IP地址、应用编号，筛选匹配的委托授权列表"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "委托授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage",
+    "功能点": "查看历史委托",
+    "功能点描述": "点击历史委托按钮，查看委托授权的历史记录"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "委托授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage",
+    "功能点": "委托授权列表表格",
+    "功能点描述": "展示实体名称、资源类型、应用编号/IP地址等列"
+  },
+  {
+    "level1": "深度权限",
+    "level2": "委托授权",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/permission/entrustManage",
+    "功能点": "查看委托详情",
+    "功能点描述": "点击行内查看委托详情按钮，查看委托授权的详细配置信息"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "应用组导航",
+    "功能点描述": "左侧面板展示应用组列表（如搜索工具、ai工具、社交媒体等），点击切换筛选该组下的应用"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "搜索应用组",
+    "功能点描述": "输入应用组名称，在左侧面板中搜索并定位应用组"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "筛选应用",
+    "功能点描述": "点击筛选按钮，展开高级筛选面板，按多条件筛选应用"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "新增应用",
+    "功能点描述": "点击新增按钮，创建新的应用资源（含应用名称、应用编码、登录方式、管理模式、应用类别等）"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "删除应用",
+    "功能点描述": "勾选应用后点击删除按钮，批量删除应用资源"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "解锁应用",
+    "功能点描述": "勾选已锁定的应用后点击解锁按钮，批量解锁应用资源"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "加锁应用",
+    "功能点描述": "勾选应用后点击加锁按钮，批量锁定应用资源禁止访问"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "应用列表表格",
+    "功能点描述": "展示应用名称、应用图标、应用编码、登录方式、管理模式、应用类别、应用状态、同步状态等列"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "管理应用",
+    "功能点描述": "点击行内管理按钮，进入应用资源详细管理页面（配置从帐号、登录方式等）"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "修改应用",
+    "功能点描述": "点击行内修改按钮，编辑应用资源配置"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appManager",
+    "功能点": "删除应用（行内）",
+    "功能点描述": "点击行内删除按钮，删除单个应用资源"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "切换至常用应用Tab",
+    "功能点描述": "点击Tab标签，切换显示常用应用列表及登录入口"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "切换至自建应用Tab",
+    "功能点描述": "点击Tab标签，切换显示自建应用列表及登录方式"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "申请资源",
+    "功能点描述": "点击申请资源按钮，打开资源申请弹窗，申请访问指定应用资源"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "加入组",
+    "功能点描述": "勾选应用后点击加入组按钮，将选中应用加入应用组"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "可用性探测",
+    "功能点描述": "点击可用性探测按钮，检测选中应用的可用性状态"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "按使用频率排序应用",
+    "功能点描述": "点击使用频率按钮，按使用频率对应用列表排序"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "应用登录",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/appResLogin",
+    "功能点": "按访问时间排序应用",
+    "功能点描述": "点击访问时间按钮，按最近访问时间对应用列表排序"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "本地工具分组管理",
+    "功能点描述": "左侧面板展示本地工具分组列表，点击切换筛选该分组下的工具"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "新增工具分组",
+    "功能点描述": "点击新增按钮，创建新的本地工具分组"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "筛选工具",
+    "功能点描述": "点击筛选按钮，展开筛选面板，按条件筛选工具"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "新增工具",
+    "功能点描述": "点击新增按钮，创建新的工具配置（含工具名称、工具支持OS类型、支持网关类型、支持协议类型、所属分组、软件标识等）"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "删除工具",
+    "功能点描述": "勾选工具后点击删除按钮，批量删除工具配置"
+  },
+  {
+    "level1": "应用资源",
+    "level2": "工具管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/appResource/toolSettingManage",
+    "功能点": "工具列表表格",
+    "功能点描述": "展示工具名称、工具支持OS类型、支持网关类型、支持协议类型、所属分组、软件标识等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至邮件设置Tab",
+    "功能点描述": "点击Tab标签，切换显示邮件服务配置和邮件模版配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "邮件服务配置",
+    "功能点描述": "配置邮件服务器参数：服务类型（自定义/腾讯/阿里/飞书/网易企业邮箱）、SMTP地址、端口、安全认证（SSL/无）、用户名邮箱、密码"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "保存邮件服务配置",
+    "功能点描述": "点击保存按钮，保存当前邮件服务器配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "发送测试邮件",
+    "功能点描述": "点击发送测试邮件按钮，验证邮件服务器配置是否可用"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "新增邮件模版",
+    "功能点描述": "点击新增按钮，创建邮件通知模版（含模版名称、模版场景、状态、描述等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "邮件模版列表表格",
+    "功能点描述": "展示模版名称、模版场景、状态、描述等列，包含20+预置邮件模版"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "修改邮件模版",
+    "功能点描述": "点击行内修改按钮，编辑邮件模版内容"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "预览邮件模版",
+    "功能点描述": "点击行内预览按钮，预览邮件模版效果"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "邮件设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "删除邮件模版",
+    "功能点描述": "点击行内删除按钮，删除邮件模版"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "短信设置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至短信设置Tab",
+    "功能点描述": "点击Tab标签，切换显示短信服务配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "站内信配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至站内信配置Tab",
+    "功能点描述": "点击Tab标签，切换显示站内信通知配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "其他配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至其他配置Tab",
+    "功能点描述": "点击Tab标签，切换显示其他系统配置项"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "页面显示配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至页面显示配置Tab",
+    "功能点描述": "点击Tab标签，切换显示页面显示相关配置项"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "风格配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至风格配置Tab",
+    "功能点描述": "点击Tab标签，切换显示系统风格主题配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "公告管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至公告管理Tab",
+    "功能点描述": "点击Tab标签，切换显示系统公告管理列表"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "字典配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至字典配置Tab",
+    "功能点描述": "点击Tab标签，切换显示数据字典配置列表"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "主帐号生成规则",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至主帐号生成规则Tab",
+    "功能点描述": "点击Tab标签，切换显示主帐号自动生成规则配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "基础配置",
+    "level3": "下载工具配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/basicConfiguration",
+    "功能点": "切换至下载工具配置Tab",
+    "功能点描述": "点击Tab标签，切换显示下载工具配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "自安全保护",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "切换至自安全保护Tab",
+    "功能点描述": "点击Tab标签，切换显示自安全保护配置（含安全自防护和日志记录查询）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "自安全保护",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "安全自防护配置",
+    "功能点描述": "配置RASP安全自防护参数：服务器类型、redis地址、Topic名称、密码、日志字段选择（备选/已选）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "自安全保护",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "安全日志记录查询",
+    "功能点描述": "筛选和查询RASP安全日志，展示RASP_ID、应用名称、攻击来源IP、攻击类型、事件发生时间、拦截状态、检测结果信息等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "自安全保护",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "导出安全日志",
+    "功能点描述": "点击导出按钮，将安全日志导出为文件"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "弱密码字典配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "切换至弱密码字典配置Tab",
+    "功能点描述": "点击Tab标签，切换显示弱密码字典配置列表"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "安全配置",
+    "level3": "水印配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/securityConfiguration",
+    "功能点": "切换至水印配置Tab",
+    "功能点描述": "点击Tab标签，切换显示页面水印配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "筛选数据模型",
+    "功能点描述": "点击筛选按钮，按条件筛选数据模型字段"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "新增数据模型字段",
+    "功能点描述": "点击新增按钮，创建新的数据模型扩展字段"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "删除数据模型字段",
+    "功能点描述": "勾选字段后点击删除按钮，批量删除数据模型字段"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "模型规则配置",
+    "功能点描述": "点击模型规则按钮，配置数据模型的校验规则"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "数据模型列表表格",
+    "功能点描述": "展示字段英文名、字段显示名、所属分类、必填、脱敏、状态、数据来源等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "数据模型",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/dataModel",
+    "功能点": "修改数据模型字段",
+    "功能点描述": "点击行内修改按钮，编辑数据模型字段配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "模版配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate",
+    "功能点": "筛选模版",
+    "功能点描述": "点击筛选按钮，按条件筛选模版配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "模版配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate",
+    "功能点": "新增模版",
+    "功能点描述": "点击新增按钮，创建新的模版配置（含模版名称、模版编码、所属分类、场景名称等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "模版配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate",
+    "功能点": "删除模版",
+    "功能点描述": "勾选模版后点击删除按钮，批量删除模版配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "模版配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/fixTemplate",
+    "功能点": "模版列表表格",
+    "功能点描述": "展示模版名称、模版编码、所属分类、场景名称等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "筛选组件",
+    "功能点描述": "点击筛选按钮，按条件筛选组件"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "新增组件",
+    "功能点描述": "点击新增按钮，创建新的组件配置（含组件名称、组件编码、引入类型、引入地址等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "删除组件",
+    "功能点描述": "勾选组件后点击删除按钮，批量删除组件"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "组件列表表格",
+    "功能点描述": "展示组件名称、组件编码、引入类型、引入地址、组件状态、更多状态、更多链接、描述等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "查看组件详情",
+    "功能点描述": "点击行内详情按钮，查看组件的详细配置信息"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "组件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/viewManage",
+    "功能点": "修改组件",
+    "功能点描述": "点击行内修改按钮，编辑组件配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "切换至模块信息Tab",
+    "功能点描述": "点击Tab标签，切换显示模块信息列表"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "筛选模块",
+    "功能点描述": "点击筛选按钮，按条件筛选模块信息"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "新增模块",
+    "功能点描述": "点击新增按钮，创建新的系统模块（含模块编码、模块名称、模块状态、模块描述等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "删除模块",
+    "功能点描述": "勾选模块后点击删除按钮，批量删除模块"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "模块列表表格",
+    "功能点描述": "展示模块编码、模块名称、模块状态、模块描述等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "模块信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "修改模块",
+    "功能点描述": "点击行内修改按钮，编辑模块配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "响应码信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "切换至响应码信息Tab",
+    "功能点描述": "点击Tab标签，切换显示响应码信息配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "业务码信息",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "切换至业务码信息Tab",
+    "功能点描述": "点击Tab标签，切换显示业务码信息配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "业务日志配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "切换至业务日志配置Tab",
+    "功能点描述": "点击Tab标签，切换显示业务日志配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "开发配置",
+    "level3": "日志模板",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/devconfig",
+    "功能点": "切换至日志模板Tab",
+    "功能点描述": "点击Tab标签，切换显示日志模板配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "筛选加密机",
+    "功能点描述": "点击筛选按钮，按条件筛选加密机配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "新增加密机",
+    "功能点描述": "点击新增按钮，创建新的加密机配置（含名称、厂商、型号、加密类型&算法等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "启用加密机",
+    "功能点描述": "勾选已停用的加密机后点击启用按钮，批量启用加密机"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "停用加密机",
+    "功能点描述": "勾选已启用的加密机后点击停用按钮，批量停用加密机"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "删除加密机",
+    "功能点描述": "勾选加密机后点击删除按钮，批量删除加密机配置"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "加密机配置",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/encryptorConfig",
+    "功能点": "加密机列表表格",
+    "功能点描述": "展示名称、厂商、型号、加密类型&算法、状态等列"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "插件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+    "功能点": "切换至插件管理Tab",
+    "功能点描述": "点击Tab标签，切换显示插件管理列表"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "插件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+    "功能点": "切换至插件文档中心Tab",
+    "功能点描述": "点击Tab标签，切换显示插件开发文档中心"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "插件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+    "功能点": "筛选插件",
+    "功能点描述": "点击筛选按钮，按条件筛选插件"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "插件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+    "功能点": "新增插件",
+    "功能点描述": "点击新增按钮，上传或创建新的插件（含插件图标、插件名称、版本号、厂商、插件类型、扩展点、标签等）"
+  },
+  {
+    "level1": "统一配置",
+    "level2": "插件管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/configuration/pluginManage",
+    "功能点": "插件列表表格",
+    "功能点描述": "展示插件图标、插件名称、版本号、厂商、状态、插件类型、扩展点、最近状态变更时间、标签等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "会话管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/monitorSession",
+    "功能点": "查看当前在线用户数",
+    "功能点描述": "页面顶部展示当前在线用户总数统计"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "会话管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/monitorSession",
+    "功能点": "筛选会话",
+    "功能点描述": "点击筛选按钮，按条件筛选在线用户会话"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "会话管理",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/monitorSession",
+    "功能点": "会话列表表格",
+    "功能点描述": "展示用户帐号、用户姓名、用户登录时间、登录IP、终端Mac地址、终端类型、令牌编码等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "缓存刷新",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+    "功能点": "全量手动刷新缓存",
+    "功能点描述": "点击全量手动刷新按钮，刷新所有缓存数据"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "缓存刷新",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+    "功能点": "增量手动刷新缓存",
+    "功能点描述": "点击增量手动刷新按钮，增量刷新变更的缓存数据"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "缓存刷新",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+    "功能点": "全量定时刷新缓存",
+    "功能点描述": "配置全量定时刷新策略，按周期自动全量刷新缓存"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "缓存刷新",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+    "功能点": "增量定时刷新缓存",
+    "功能点描述": "配置增量定时刷新策略，按周期自动增量刷新缓存"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "缓存刷新",
+    "level3": null,
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/cacheRefresh",
+    "功能点": "按缓存目录刷新",
+    "功能点描述": "按缓存目录（应用资源/深度权限/金库策略/认证与访问控制中心/用户中心）单独刷新缓存"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "中间件日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+    "功能点": "选择中间件清理对象",
+    "功能点描述": "勾选需要清理日志的中间件（Nacos/Nginx/Redis/Zookeeper/MinIO/dolphinSchduler/IAM插件底座）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "中间件日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+    "功能点": "配置中间件日志清理规则",
+    "功能点描述": "配置清理规则：只保留最近N天日志/存储量超过M/超过百分比自动清理"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "中间件日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+    "功能点": "定期清理中间件日志",
+    "功能点描述": "开关启用定期清理，配置执行周期（Cron表达式）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "中间件日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+    "功能点": "手动清理中间件日志",
+    "功能点描述": "点击手动清理按钮，立即执行中间件日志清理"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "中间件日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/middleButtonLog",
+    "功能点": "保存中间件日志清理配置",
+    "功能点描述": "点击保存按钮，保存中间件日志清理配置"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "清理记录",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/dataCleanRecord",
+    "功能点": "筛选清理记录",
+    "功能点描述": "点击筛选按钮，按条件筛选数据清理记录"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "清理记录",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/dataCleanRecord",
+    "功能点": "清理记录列表表格",
+    "功能点描述": "展示编号、清理类型、清理对象、清理时间、清理结果等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "操作日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog",
+    "功能点": "配置操作日志清理规则",
+    "功能点描述": "配置操作日志清理规则：只保留最近N天日志，备份历史表"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "操作日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog",
+    "功能点": "定期清理操作日志",
+    "功能点描述": "开关启用定期清理，配置执行周期（Cron表达式）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "操作日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog",
+    "功能点": "手动清理操作日志",
+    "功能点描述": "点击手动清理按钮，立即执行操作日志清理"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "操作日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/operationLog",
+    "功能点": "保存操作日志清理配置",
+    "功能点描述": "点击保存按钮，保存操作日志清理配置"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "系统运行日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+    "功能点": "选择系统运行日志清理对象",
+    "功能点描述": "勾选需要清理的系统运行日志对象（管理服务/核心服务）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "系统运行日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+    "功能点": "配置系统运行日志清理规则",
+    "功能点描述": "配置清理规则：只保留最近N天/存储量超过M/超过百分比自动清理"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "系统运行日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+    "功能点": "定期清理系统运行日志",
+    "功能点描述": "开关启用定期清理，配置执行周期（Cron表达式）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "系统运行日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+    "功能点": "手动清理系统运行日志",
+    "功能点描述": "点击手动清理按钮，立即执行系统运行日志清理"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据清理",
+    "level3": "系统运行日志",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataCleanRecordRoot/systemRunLog",
+    "功能点": "保存系统运行日志清理配置",
+    "功能点描述": "点击保存按钮，保存系统运行日志清理配置"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logManagement",
+    "功能点": "查询日志",
+    "功能点描述": "输入查询条件，查询系统操作日志"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logManagement",
+    "功能点": "导出日志",
+    "功能点描述": "点击导出按钮，将日志导出为文件"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志管理",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logManagement",
+    "功能点": "日志列表表格",
+    "功能点描述": "展示用户帐号、客户端IP、业务分类、操作类型、日期、业务名称、日志内容等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志转发",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward",
+    "功能点": "筛选日志转发",
+    "功能点描述": "点击筛选按钮，按条件筛选日志转发配置"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志转发",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward",
+    "功能点": "新增日志转发",
+    "功能点描述": "点击新增按钮，创建日志转发配置（含转发日志类型、日志IP、日志端口、分隔符、描述等）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "日志中心",
+    "level3": "日志转发",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/logManagementRoot/logForward",
+    "功能点": "日志转发列表表格",
+    "功能点描述": "展示转发日志类型、日志IP、日志端口、分隔符、描述等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "发起工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmList",
+    "功能点": "主帐号类流程工单",
+    "功能点描述": "发起主帐号类流程工单：主帐号申请、主帐号变更、主帐号申请延期、主帐号删除、主帐号加解锁"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "发起工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmList",
+    "功能点": "应用帐号类流程工单",
+    "功能点描述": "发起应用帐号类流程工单：应用帐号申请、应用帐号变更、应用帐号申请延期、应用帐号删除、应用帐号加解锁"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "发起工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmList",
+    "功能点": "权限类流程工单",
+    "功能点描述": "发起权限类流程工单：权限转移与复制、金库审批权限转移"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "切换至我发起的Tab",
+    "功能点描述": "点击Tab标签，切换显示当前用户发起的工单列表"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "切换至我参与的Tab",
+    "功能点描述": "点击Tab标签，切换显示当前用户参与的工单列表"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "切换至我待办的Tab",
+    "功能点描述": "点击Tab标签，切换显示待当前用户处理的工单列表"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "切换至我的草稿Tab",
+    "功能点描述": "点击Tab标签，切换显示当前用户的工单草稿列表"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "筛选我的工单",
+    "功能点描述": "点击筛选按钮，按条件筛选我的工单"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "我的工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTable",
+    "功能点": "我的工单列表表格",
+    "功能点描述": "展示工单名称、流程分类、流程名称、当前节点、当前处理人、紧急程度、工单状态、施工结果、创建时间等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "全量工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTableAll",
+    "功能点": "筛选全量工单",
+    "功能点描述": "点击筛选按钮，按条件筛选全量工单"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "流程管理",
+    "level3": "全量工单",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/bpmManage/bpmTableAll",
+    "功能点": "全量工单列表表格",
+    "功能点描述": "展示工单流水号、工单名称、类型、发起人、发起时间、紧急程度、状态、当前环节等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup",
+    "功能点": "启动备份",
+    "功能点描述": "开关启用/停用数据备份功能"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup",
+    "功能点": "定期备份",
+    "功能点描述": "开关启用定期备份，配置执行周期（Cron表达式）"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup",
+    "功能点": "手动备份",
+    "功能点描述": "点击手动备份按钮，立即执行数据备份"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份配置",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackup",
+    "功能点": "保存备份配置",
+    "功能点描述": "点击保存按钮，保存数据备份配置"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份查询",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackupSearchList",
+    "功能点": "筛选备份记录",
+    "功能点描述": "点击筛选按钮，按条件筛选备份记录"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "数据备份",
+    "level3": "备份查询",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/dataBackupRoot/dataBackupSearchList",
+    "功能点": "备份记录列表表格",
+    "功能点描述": "展示编号、备份类型、备份时间、备份结果等列"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "许可管理",
+    "level3": "激活授权",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/activateAuthorize",
+    "功能点": "查看当前激活授权详情",
+    "功能点描述": "查看当前许可类型（正式版/测试版）、客户信息、许可有效期、设备标识、基本功能版本、用户总量/剩余、应用总量/剩余、高级功能等"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "许可管理",
+    "level3": "激活授权",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/activateAuthorize",
+    "功能点": "激活授权",
+    "功能点描述": "上传许可证书文件，激活系统授权"
+  },
+  {
+    "level1": "平台管理",
+    "level2": "许可管理",
+    "level3": "历史授权",
+    "level4": null,
+    "url": "http://10.28.149.50:9432/iam/v1/#/systemManage/premissionManage/historyAuthorize",
+    "功能点": "历史授权列表表格",
+    "功能点描述": "展示设备标识、用户数量、应用数量、扩展功能、授权时间、有效期等列"
+  }
+]

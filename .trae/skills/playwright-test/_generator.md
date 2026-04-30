@@ -1,8 +1,9 @@
----
+***
+
 name: playwright-generator
-description: Test generator agent for Playwright. Invoked by main agent (orchestrator) via task(subagent_type="playwright-generator") during Step 4. Generates executable test code from test plans using browser tools. Writes *.spec.ts files to playwright-tests/ai-generated/.
+description: Test generator agent for Playwright. Invoked by main agent (orchestrator) via task(subagent\_type="playwright-generator") during Step 4. Generates executable test code from test plans using browser tools. Writes \*.spec.ts files to playwright-tests/ai-generated/.
 mode: subagent
----
+--------------
 
 # Playwright Test Generator
 
@@ -96,7 +97,7 @@ You have access to Playwright MCP browser tools. You MUST use them to explore th
 5. Generate test code incorporating verified selectors
 ```
 
----
+***
 
 ## Generation Workflow (Sub-steps of Orchestrator Step 4)
 
@@ -130,10 +131,11 @@ export class PageName {
 ```
 
 **Decision Matrix:**
-| Scenario | Action |
-|----------|--------|
-| Element used in 3+ tests | Add to Page Object |
-| Element used in 1-2 tests | Define inline |
+
+| Scenario                     | Action                |
+| ---------------------------- | --------------------- |
+| Element used in 3+ tests     | Add to Page Object    |
+| Element used in 1-2 tests    | Define inline         |
 | Module-specific complex flow | Create new Page class |
 
 **Verify Selectors with Browser Tools:**
@@ -151,6 +153,40 @@ const snapshot = await browser_snapshot({});
 ```
 
 ### 4.4: Generate Test Code
+
+**⚠️ CRITICAL: Generate REAL Playwright test code, NOT mock data**
+
+**FORBIDDEN PATTERNS（禁止生成）:**
+
+- ❌ Hardcoded `page_content = {...}` dictionary
+- ❌ Manual `"status": "PASS"` without actual assertions
+- ❌ `actual: page_content["user_info"]` - this is mock, not real
+- ❌ Python scripts that simulate test execution
+
+**REQUIRED PATTERNS（必须生成）:**
+
+- ✅ `await page.goto('http://actual-url')`
+- ✅ `await page.locator('.selector').textContent()`
+- ✅ `expect(actual).toContain('expected')`
+- ✅ TypeScript `.spec.ts` files that run with `npx playwright test`
+
+**Example - CORRECT (真实测试):**
+
+```typescript
+import { test, expect } from '@playwright/test';
+
+test('用户登录信息展示', async ({ page }) => {
+  await page.goto('http://10.28.149.50:9432/iam/v1/#/home/homeManage');
+  const userInfo = await page.locator('.user-info').textContent();
+  expect(userInfo).toContain('admin');
+});
+Example - FORBIDDEN (Mock测试):
+
+python
+# ❌ DO NOT generate Python mock scripts
+real_page_data = {"user_info": "欢迎admin"}
+test_results = [{"status": "PASS"}]
+```
 
 **File Structure:**
 
@@ -195,14 +231,15 @@ test.describe("{Feature} - {Source}", () => {
 ```
 
 **Step-to-Code Mapping:**
-| Step Type | Code |
-|-----------|------|
-| Navigate | `await page.goto("/url")` |
-| Click | `await page.locator("selector").click()` |
-| Type | `await page.locator("selector").fill("text")` |
-| Verify visible | `await expect(page.locator("selector")).toBeVisible()` |
-| Verify text | `await expect(page.locator("selector")).toHaveText("expected")` |
-| Verify URL | `await expect(page).toHaveURL(/pattern/)` |
+
+| Step Type      | Code                                                            |
+| -------------- | --------------------------------------------------------------- |
+| Navigate       | `await page.goto("/url")`                                       |
+| Click          | `await page.locator("selector").click()`                        |
+| Type           | `await page.locator("selector").fill("text")`                   |
+| Verify visible | `await expect(page.locator("selector")).toBeVisible()`          |
+| Verify text    | `await expect(page.locator("selector")).toHaveText("expected")` |
+| Verify URL     | `await expect(page).toHaveURL(/pattern/)`                       |
 
 **Assertion Patterns:**
 
@@ -246,7 +283,7 @@ async helperMethod(param: string): Promise<void> {
 }
 ```
 
----
+***
 
 ### Conventions
 
@@ -257,7 +294,7 @@ async helperMethod(param: string): Promise<void> {
 - Document selector fallbacks in comments
 - **CRITICAL:** Verify selectors with browser tools before generating
 
----
+***
 
 ### Return to Orchestrator
 
@@ -279,4 +316,27 @@ Update `session.json`:
 }
 ```
 
-Report: "Generation complete. {N} tests written to {filename}. Selectors verified. Page Objects updated: [list]."
+Report: "Generation complete. {N} tests written to {filename}. Selectors verified. Page Objects updated: \[list]."
+
+<br />
+
+### 5.1: Run Tests (REAL EXECUTION)
+
+**⚠️ CRITICAL: MUST execute real Playwright test runner**
+
+npx playwright test playwright-tests/ai-generated/\*.spec.ts --reporter=json --output=test-results/
+FORBIDDEN:
+
+❌ Creating run-results.json manually
+
+❌ Hardcoding "status": "PASS"
+
+❌ Simulating test execution without running Playwright
+
+REQUIRED:
+
+✅ Parse actual CLI output
+
+✅ Read real test runner JSON
+
+✅ Report real failures with stack traces

@@ -1,0 +1,20 @@
+{
+  "sessionId": "session-20260430-001",
+  "mode": "heal-only",
+  "status": "complete",
+  "phase": "awaiting-user-choice",
+  "startedAt": "2026-04-30T17:00:00.000Z",
+  "servers": {
+    "backendWasStarted": false,
+    "frontendWasStarted": false,
+    "frontendPid": null
+  },
+  "metrics": {
+    "testsPlanned": 2,
+    "testsGenerated": 0,
+    "testsPassed": 0,
+    "testsFailed": 2,
+    "testsFixed": 0,
+    "healingAttempts": 1
+  }
+}

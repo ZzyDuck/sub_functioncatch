@@ -7,10 +7,11 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 grandparent_dir = os.path.dirname(parent_dir)
 root_dir = os.path.dirname(grandparent_dir)
-env_path = os.path.join(root_dir, '.env')
+functioncatch_dir = root_dir
+env_path = os.path.join(functioncatch_dir, '.env')
 load_dotenv(env_path)
 
-sys.path.insert(0, root_dir)
+sys.path.insert(0, functioncatch_dir)
 from feishu_service import FeishuClient
 
 def find_merge_ranges(rows, merge_columns):
@@ -89,6 +90,13 @@ def export_to_feishu(json_path, app_id, app_secret):
         except Exception as e:
             print(f"警告: 合并单元格失败 - {e}")
     
+    print("正在设置表格公开分享权限...")
+    try:
+        client.share_spreadsheet(spreadsheet_token, allow_edit=True)
+        print("公开分享权限设置成功")
+    except Exception as e:
+        print(f"警告: 设置公开分享权限失败 - {e}")
+    
     url = client.sheet_url(spreadsheet_token)
     print(f"\n飞书表格创建成功！")
     print(f"表格链接: {url}")
@@ -101,7 +109,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='将功能点分析结果导出到飞书表格')
     parser.add_argument('--json_path', type=str, 
-                        default=r'd:\my_file\工作\AsiaInfo\aitrae\SDD3\functioncatch\.trae\skills\function-analyzer\data\function_analysis.json',
+                        default=os.path.join(functioncatch_dir, 'data', 'function_analysis.json'),
                         help='功能点分析JSON文件路径')
     parser.add_argument('--app_id', type=str, default=os.getenv('FEISHU_APP_ID'), help='飞书应用ID')
     parser.add_argument('--app_secret', type=str, default=os.getenv('FEISHU_APP_SECRET'), help='飞书应用密钥')

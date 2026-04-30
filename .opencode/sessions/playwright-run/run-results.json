@@ -1,0 +1,32 @@
+{
+  "status": "partial",
+  "testFile": "playwright-tests/ai-generated/module-homepage.spec.ts",
+  "timestamp": "2026-04-30T17:05:00.000Z",
+  "summary": {
+    "total": 2,
+    "passed": 0,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "test": "TC-ERR-004: 超长时间搜索关键词",
+      "error": "搜索框未限制输入长度，可能导致性能问题",
+      "location": "module-homepage.spec.ts:45",
+      "stack": "Error: 输入被截断或提示超出长度限制\nExpected: 输入长度不超过100字符\nActual: 输入长度为150字符"
+    },
+    {
+      "test": "TC-ERR-009: 页面刷新后状态保持",
+      "error": "页面刷新后回到默认的应用资源登录Tab，状态未保持",
+      "location": "module-homepage.spec.ts:78",
+      "stack": "Error: 保持金库待审批Tab选中\nExpected: 金库待审批Tab\nActual: 应用资源登录Tab"
+    }
+  ],
+  "attempt": 1,
+  "healing": {
+    "attempts": 1,
+    "testsFixed": [],
+    "testsStillFailing": 2,
+    "allTestsPassed": false
+  }
+}

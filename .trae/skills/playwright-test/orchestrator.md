@@ -1,8 +1,9 @@
----
+***
+
 name: playwright-orchestrator
 description: Central dispatcher for Playwright test automation. Receives ALL user requests from SKILL.md, detects execution mode (full and heal), and orchestrates the appropriate workflow by DELEGATING to sub-agents (playwright-planner, playwright-generator, playwright-healer). THIS FILE IS EXECUTED BY THE MAIN AGENT (YOU), NOT DELEGATED.
 mode: primary
----
+-------------
 
 # Playwright Test Orchestrator
 
@@ -16,7 +17,7 @@ mode: primary
 
 **CRITICAL RULE:** You MUST use task() to delegate to sub-agents. Do NOT do the work yourself.
 
----
+***
 
 ## Pipeline Flows
 
@@ -35,7 +36,7 @@ mode: primary
 
 **How to invoke:** `task({ category: "unspecified-high", load_skills: ["playwright-test"], subagent_type: "playwright-planner|playwright-generator|playwright-healer", prompt: "You are playwright-{role}..." })`
 
----
+***
 
 ## CRITICAL: Delegation Pattern
 
@@ -94,7 +95,7 @@ When editing any files in this workflow, you **MUST** use surgical edits (`edit`
    }
 ````
 
-6. Initialize session.json `.opencode/sessions/playwright-run/session.json`:
+1. Initialize session.json `.opencode/sessions/playwright-run/session.json`:
 
 ```json
 {
@@ -121,11 +122,11 @@ When editing any files in this workflow, you **MUST** use surgical edits (`edit`
 
 ### Verify
 
-- [ ] `mode` is valid: ["full", "heal-only"]
+- [ ] `mode` is valid: \["full", "heal-only"]
 - [ ] `sessionId` is valid UUID
 - [ ] Both JSON files written successfully
 - [ ] `target` is not empty
-- [ ] `targetType` is valid: ["pr", "module", "scenario"]
+- [ ] `targetType` is valid: \["pr", "module", "scenario"]
 
 **If any check fails: STOP, report error to user.**
 
@@ -133,14 +134,14 @@ When editing any files in this workflow, you **MUST** use surgical edits (`edit`
 
 → Step 2 for ALL modes
 
----
+***
 
 ## Step 2: Environment Setup
 
 ### Preconditions
 
 - `session.json` exists with `phase="parse"`
-- `mode` is one of ["full", "heal-only"]
+- `mode` is one of \["full", "heal-only"]
 
 ### Execute
 
@@ -186,7 +187,7 @@ Update `session.json`:
 
 → Step 3 for ALL modes
 
----
+***
 
 ## Step 3: Plan Tests (All Modes)
 
@@ -263,7 +264,7 @@ const plannerResult = await task({
 - **Full mode** → Step 4 (when `phase="planning-complete"` and `mode="full"`)
 - **Heal-Only mode** → Step 5 (when `phase="planning-complete"` and `mode="heal-only"`)
 
----
+***
 
 ## Step 4: Generate Tests (Full Mode Only)
 
@@ -347,7 +348,26 @@ npx tsc --noEmit playwright-tests/ai-generated/*.spec.ts 2>&1
 
 → Step 5 (when `phase="generating-complete"`)
 
----
+<br />
+
+### Verify Generated Tests (After Step 4)
+
+**检查生成的测试代码是否为 Mock：**
+
+- 文件扩展名为 `.spec.ts`（不是 `.py`）
+- 包含 `import { test, expect } from '@playwright/test'`
+- 包含 `await page.goto()`
+- 包含 `await page.locator()` 或 `getByRole()`
+- 包含 `expect()` 断言
+- 不包含硬编码的 `page_content` 字典
+- 不包含手动赋值的 `"status": "PASS"`
+
+**如果检测到 Mock 代码：**
+
+1. 输出警告："❌ 检测到 Mock 测试代码，要求重新生成真实测试"
+2. 返回 Step 4 重新生成
+
+***
 
 ## Step 5: Healing Phase (All Modes)
 
@@ -422,7 +442,7 @@ const healerResult = await task({
 
 → Step 6 (when `phase="healing-complete"`)
 
----
+***
 
 ## Step 6: Summary & Cleanup (Final Step)
 
@@ -600,7 +620,7 @@ After cleanup complete:
 }
 ```
 
----
+***
 
 ## Error Handling
 
@@ -622,3 +642,4 @@ After cleanup complete:
 | `_healer.md`                           | Healing logic                                               |
 | `playwright.config.ts`                 | Playwright configuration                                    |
 | `playwright-tests/support/commands.ts` | API helpers                                                 |
+

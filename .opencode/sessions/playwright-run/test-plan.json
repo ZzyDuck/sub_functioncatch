@@ -1,0 +1,95 @@
+{
+  "sessionId": "session-20260430-001",
+  "source": "module:首页视图-异常测试",
+  "mode": "heal-only",
+  "timestamp": "2026-04-30T17:00:00.000Z",
+  "preconditions": {
+    "description": "需要访问首页视图页面，验证异常测试场景",
+    "apiHelpers": [],
+    "setupSteps": ["导航到首页视图页面"]
+  },
+  "scenarios": [
+    {
+      "id": "TC-ERR-004",
+      "title": "超长时间搜索关键词",
+      "category": "validation",
+      "preconditions": ["首页视图页面已加载"],
+      "steps": [
+        {
+          "action": "type",
+          "target": "搜索框输入",
+          "value": "超过100个字符的字符串，用于测试输入长度限制功能是否正常工作",
+          "expected": "输入被截断或提示超出长度限制"
+        },
+        {
+          "action": "verify",
+          "target": "搜索框",
+          "value": "",
+          "expected": "输入长度不超过100字符"
+        }
+      ],
+      "selectors": {
+        "searchInput": "[data-testid='search-input']"
+      },
+      "apiSetup": {}
+    },
+    {
+      "id": "TC-ERR-009",
+      "title": "页面刷新后状态保持",
+      "category": "navigation",
+      "preconditions": ["首页视图页面已加载"],
+      "steps": [
+        {
+          "action": "click",
+          "target": "金库待审批Tab",
+          "value": "",
+          "expected": "Tab切换到金库待审批"
+        },
+        {
+          "action": "click",
+          "target": "刷新按钮",
+          "value": "",
+          "expected": "页面刷新"
+        },
+        {
+          "action": "verify",
+          "target": "当前Tab",
+          "value": "",
+          "expected": "保持金库待审批Tab选中"
+        }
+      ],
+      "selectors": {
+        "vaultTab": "[data-testid='vault-tab']",
+        "refreshButton": "[data-testid='refresh-button']"
+      },
+      "apiSetup": {}
+    }
+  ],
+  "selectors": {
+    "global": {
+      "searchInput": "[data-testid='search-input']",
+      "vaultTab": "[data-testid='vault-tab']",
+      "refreshButton": "[data-testid='refresh-button']"
+    }
+  },
+  "featureFlags": [],
+  "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+  "references": {
+    "existingTests": [],
+    "apiHelpers": []
+  },
+  "fixes": [
+    {
+      "testId": "TC-ERR-004",
+      "issue": "搜索框未限制输入长度",
+      "suggestedFix": "在搜索框添加maxlength属性或前端验证，限制输入长度为100字符",
+      "type": "validation"
+    },
+    {
+      "testId": "TC-ERR-009",
+      "issue": "页面刷新后Tab状态未保持",
+      "suggestedFix": "使用URL参数或localStorage保存Tab状态，页面加载时恢复状态",
+      "type": "navigation"
+    }
+  ]
+}

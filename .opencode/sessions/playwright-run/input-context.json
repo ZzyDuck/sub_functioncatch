@@ -1,0 +1,8 @@
+{
+  "rawInput": "测试 real_tests_with_failures.json 中的失败测试用例",
+  "mode": "heal-only",
+  "target": "首页视图-异常测试",
+  "targetType": "module",
+  "timestamp": "2026-04-30T17:00:00.000Z",
+  "sessionId": "session-20260430-001"
+}

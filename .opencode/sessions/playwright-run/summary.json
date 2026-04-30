@@ -1,0 +1,36 @@
+{
+  "sessionId": "session-20260430-001",
+  "mode": "heal-only",
+  "request": "测试 real_tests_with_failures.json 中的失败测试用例",
+  "status": "partial",
+  "duration": 300000,
+  "files": {
+    "testPlan": ".opencode/sessions/playwright-run/test-plan.json",
+    "testFiles": [],
+    "results": ".opencode/sessions/playwright-run/run-results.json",
+    "summary": ".opencode/sessions/playwright-run/summary.json",
+    "bugReport": ".opencode/sessions/playwright-run/bug-report.md"
+  },
+  "results": {
+    "testsPlanned": 2,
+    "testsGenerated": 0,
+    "testsPassed": 0,
+    "testsFailed": 2,
+    "testsFixed": 0,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "testId": "TC-ERR-004",
+      "title": "超长时间搜索关键词",
+      "error": "搜索框未限制输入长度，可能导致性能问题",
+      "suggestedFix": "在搜索框添加maxlength属性或前端验证，限制输入长度为100字符"
+    },
+    {
+      "testId": "TC-ERR-009",
+      "title": "页面刷新后状态保持",
+      "error": "页面刷新后回到默认的应用资源登录Tab，状态未保持",
+      "suggestedFix": "使用URL参数或localStorage保存Tab状态，页面加载时恢复状态"
+    }
+  ]
+}
