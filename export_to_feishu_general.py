@@ -1,15 +1,15 @@
 import json
 import os
 import sys
+from pathlib import Path
 from dotenv import load_dotenv
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-functioncatch_dir = parent_dir
-env_path = os.path.join(functioncatch_dir, '.env')
-load_dotenv(env_path)
+BASE_DIR = Path(__file__).resolve().parent
+ENV_PATH = BASE_DIR / ".env"
 
-sys.path.insert(0, functioncatch_dir)
+load_dotenv(ENV_PATH)
+
+sys.path.insert(0, BASE_DIR)
 from feishu_service import FeishuClient
 
 def find_merge_ranges(rows, merge_columns):
@@ -67,7 +67,7 @@ def export_to_feishu(json_path, app_id, app_secret):
     
     print(f"共读取到数据: {len(data) if isinstance(data, list) else '树形结构'}")
     
-    file_name = os.path.basename(json_path)
+    file_name = Path(json_path).name
     
     merge_columns = []
     
@@ -78,7 +78,7 @@ def export_to_feishu(json_path, app_id, app_secret):
         sheet_name = "菜单列表"
         merge_columns = [0, 1, 2, 3]
     
-    elif file_name == "function_analysis353.json":
+    elif file_name == "function_analysis416.json":
         headers = ["一级菜单", "二级菜单", "三级菜单", "四级菜单", "URL", "功能点", "功能点描述"]
         rows = []
         for fp in data:

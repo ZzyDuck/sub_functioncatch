@@ -1,0 +1,67 @@
+[
+  {
+    "id": "TC-0001",
+    "title": "验证查看登录信息功能正常可用",
+    "module": "首页视图/首页/登录信息",
+    "priority": "中",
+    "status": "passed",
+    "message": "登录信息正确显示：欢迎admin（超级管理员），今日第44次登录",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-05-07T07:17:00Z",
+      "actual_result": "页面正确显示用户名(admin)、角色(超级管理员)、今日登录次数(44)、自审计链接存在"
+    }
+  },
+  {
+    "id": "TC-0002",
+    "title": "验证自审计功能正常可用",
+    "module": "首页视图/首页/登录信息",
+    "priority": "中",
+    "status": "passed",
+    "message": "点击自审计链接成功跳转到自审计页面，日志列表正确展示",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/bizLogManage?platformLog=true&agwSessionManageLogs=false&sessionManageLogs=false",
+      "executed_at": "2026-05-07T07:18:18Z",
+      "actual_result": "成功跳转到自审计页面(AIS-IAM - 自审计)，平台日志列表展示用户帐号、登录IP、客户端浏览器、业务模块、操作类型、操作内容、访问结果、日志日期，数据正确，多条日志记录可见"
+    }
+  },
+  {
+    "id": "TC-0003",
+    "title": "验证查看用户基本信息功能正常可用",
+    "module": "首页视图/首页/用户基本信息",
+    "priority": "中",
+    "status": "passed",
+    "message": "用户基本信息正确显示：组织机构、IP地址、密码到期日",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-05-07T07:19:16Z",
+      "actual_result": "页面正确显示组织机构(根组织)、IP(10.28.100.122)、密码到期日(2099-12-08)"
+    }
+  },
+  {
+    "id": "TC-0004",
+    "title": "验证查看公告功能正常可用",
+    "module": "首页视图/首页/公告",
+    "priority": "中",
+    "status": "passed",
+    "message": "公告区域正确显示，当前无公告数据",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/homeManage",
+      "executed_at": "2026-05-07T07:19:16Z",
+      "actual_result": "公告区域正确显示标题和内容区域，当前显示'暂无数据'"
+    }
+  },
+  {
+    "id": "TC-0005",
+    "title": "验证更多公告功能正常可用",
+    "module": "首页视图/首页/公告",
+    "priority": "低",
+    "status": "passed",
+    "message": "点击更多按钮成功跳转到公告信息完整列表页面",
+    "details": {
+      "url": "http://10.28.149.50:9432/iam/v1/#/home/noticeList",
+      "executed_at": "2026-05-07T07:24:47Z",
+      "actual_result": "成功跳转到公告信息页面(AIS-IAM - 公告信息)，显示完整公告列表(公告标题、重要级别、公告类型、生效时间)，搜索框(请输入公告标题)、筛选按钮、公告类型筛选(全部/未读/已读)功能正常，分页显示共0条"
+    }
+  }
+]

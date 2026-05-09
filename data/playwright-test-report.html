@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright Test Report - AIS-IAM</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+        .header { background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; padding: 24px 32px; }
+        .header h1 { font-size: 24px; font-weight: 600; }
+        .header .meta { margin-top: 8px; font-size: 14px; opacity: 0.8; }
+        .summary { display: flex; gap: 16px; padding: 24px 32px; background: white; border-bottom: 1px solid #e2e8f0; }
+        .summary-card { flex: 1; padding: 16px; border-radius: 8px; text-align: center; }
+        .summary-card.total { background: #ebf4ff; color: #3182ce; }
+        .summary-card.passed { background: #f0fff4; color: #38a169; }
+        .summary-card.failed { background: #fff5f5; color: #e53e3e; }
+        .summary-card .number { font-size: 36px; font-weight: 700; }
+        .summary-card .label { font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .container { max-width: 1200px; margin: 24px auto; padding: 0 32px; }
+        .test-suite { background: white; border-radius: 8px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow: hidden; }
+        .suite-header { padding: 16px 20px; background: #f7fafc; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+        .suite-header:hover { background: #edf2f7; }
+        .suite-title { font-size: 16px; font-weight: 600; }
+        .suite-badge { padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .suite-badge.pass { background: #c6f6d5; color: #22543d; }
+        .suite-badge.fail { background: #fed7d7; color: #742a2a; }
+        .test-case { border-bottom: 1px solid #e2e8f0; }
+        .test-case:last-child { border-bottom: none; }
+        .case-header { padding: 14px 20px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .case-header:hover { background: #f7fafc; }
+        .status-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+        .status-icon.pass { background: #c6f6d5; color: #22543d; }
+        .status-icon.fail { background: #fed7d7; color: #742a2a; }
+        .case-info { flex: 1; }
+        .case-title { font-size: 14px; font-weight: 500; }
+        .case-meta { font-size: 12px; color: #718096; margin-top: 2px; }
+        .case-duration { font-size: 12px; color: #a0aec0; font-family: monospace; }
+        .case-detail { padding: 0 20px 16px 56px; display: none; }
+        .case-detail.open { display: block; }
+        .detail-section { margin-bottom: 12px; }
+        .detail-label { font-size: 12px; font-weight: 600; color: #4a5568; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .detail-content { font-size: 13px; color: #4a5568; line-height: 1.6; }
+        .steps-list { list-style: none; }
+        .steps-list li { padding: 4px 0; padding-left: 20px; position: relative; }
+        .steps-list li::before { content: '�?; position: absolute; left: 0; color: #a0aec0; }
+        .expected-list { list-style: none; }
+        .expected-list li { padding: 4px 0; padding-left: 20px; position: relative; }
+        .expected-list li::before { content: '�?; position: absolute; left: 0; color: #38a169; }
+        .screenshot-container { margin-top: 12px; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
+        .screenshot-label { padding: 8px 12px; background: #f7fafc; font-size: 12px; font-weight: 600; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+        .screenshot-img { width: 100%; max-height: 400px; object-fit: contain; background: #1a1a2e; }
+        .footer { text-align: center; padding: 24px; color: #a0aec0; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎭 Playwright Test Report</h1>
+        <div class="meta">AIS-IAM System | 首页视图模块 | 执行时间: 2026-05-07 16:10 ~ 16:15</div>
+    </div>
+
+    <div class="summary">
+        <div class="summary-card total">
+            <div class="number">5</div>
+            <div class="label">Total Tests</div>
+        </div>
+        <div class="summary-card passed">
+            <div class="number">5</div>
+            <div class="label">Passed �?/div>
+        </div>
+        <div class="summary-card failed">
+            <div class="number">0</div>
+            <div class="label">Failed �?/div>
+        </div>
+        <div class="summary-card total">
+            <div class="number">100%</div>
+            <div class="label">Pass Rate</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Test Suite: 首页视图/首页 -->
+        <div class="test-suite">
+            <div class="suite-header" onclick="toggleSuite(this)">
+                <span class="suite-title">📂 首页视图 / 首页</span>
+                <span class="suite-badge pass">5/5 PASSED</span>
+            </div>
+
+            <!-- TC-0001 -->
+            <div class="test-case">
+                <div class="case-header" onclick="toggleDetail(this)">
+                    <div class="status-icon pass">�?/div>
+                    <div class="case-info">
+                        <div class="case-title">TC-0001: 验证查看登录信息功能正常可用</div>
+                        <div class="case-meta">首页视图/首页/登录信息 | 优先�? �?| 场景�?/div>
+                    </div>
+                    <div class="case-duration">~3s</div>
+                </div>
+                <div class="case-detail">
+                    <div class="detail-section">
+                        <div class="detail-label">前置条件</div>
+                        <div class="detail-content">已登录系统，具有首页视图/首页/登录信息相关操作权限</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">测试步骤</div>
+                        <ul class="steps-list">
+                            <li>登录系统，进入首页视�?首页/登录信息页面</li>
+                            <li>查看登录信息信息</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">预期结果</div>
+                        <ul class="expected-list">
+                            <li>信息正确显示</li>
+                            <li>数据内容完整</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">实际结果</div>
+                        <div class="detail-content" style="color: #38a169; font-weight: 500;">�?通过 �?页面正确显示用户�?admin)、角�?超级管理�?、今日登录次�?45)、自审计链接存在</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">验证详情</div>
+                        <div class="detail-content">
+                            <p>�?欢迎admin �?用户名正确显�?/p>
+                            <p>�?（超级管理员）�?角色正确显示</p>
+                            <p>�?今日�?5次登�?�?登录次数正确显示</p>
+                            <p>�?自审�?�?链接存在且可点击</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 测试截图 �?首页登录信息区域</div>
+                        <img class="screenshot-img" src="tc-0001-login-info.png" alt="TC-0001 Screenshot" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:20px;text-align:center;color:#a0aec0\'>截图文件: tc-0001-login-info.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TC-0002 -->
+            <div class="test-case">
+                <div class="case-header" onclick="toggleDetail(this)">
+                    <div class="status-icon pass">�?/div>
+                    <div class="case-info">
+                        <div class="case-title">TC-0002: 验证自审计功能正常可�?/div>
+                        <div class="case-meta">首页视图/首页/登录信息 | 优先�? �?| 场景�?/div>
+                    </div>
+                    <div class="case-duration">~5s</div>
+                </div>
+                <div class="case-detail">
+                    <div class="detail-section">
+                        <div class="detail-label">前置条件</div>
+                        <div class="detail-content">已登录系统，具有首页视图/首页/登录信息相关操作权限</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">测试步骤</div>
+                        <ul class="steps-list">
+                            <li>登录系统，进入首页视�?首页/登录信息页面</li>
+                            <li>执行「自审计」操�?/li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">预期结果</div>
+                        <ul class="expected-list">
+                            <li>自审计功能正常执�?/li>
+                            <li>操作结果符合预期</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">实际结果</div>
+                        <div class="detail-content" style="color: #38a169; font-weight: 500;">�?通过 �?点击自审计链接成功跳转到自审计页�?AIS-IAM - 自审�?，平台日志列表正确展�?/div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">验证详情</div>
+                        <div class="detail-content">
+                            <p>�?页面标题: AIS-IAM - 自审�?/p>
+                            <p>�?平台日志列表展示: 用户帐号、登录IP、客户端浏览器、业务模块、操作类型、操作内容、访问结果、日志日�?/p>
+                            <p>�?多条日志记录可见，数据正�?/p>
+                            <p>�?搜索框、筛选按钮、时间范围选择功能正常</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 测试截图 �?自审计页�?/div>
+                        <img class="screenshot-img" src="tc-0002-self-audit.png" alt="TC-0002 Screenshot" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:20px;text-align:center;color:#a0aec0\'>截图文件: tc-0002-self-audit.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TC-0003 -->
+            <div class="test-case">
+                <div class="case-header" onclick="toggleDetail(this)">
+                    <div class="status-icon pass">�?/div>
+                    <div class="case-info">
+                        <div class="case-title">TC-0003: 验证查看用户基本信息功能正常可用</div>
+                        <div class="case-meta">首页视图/首页/用户基本信息 | 优先�? �?| 场景�?/div>
+                    </div>
+                    <div class="case-duration">~2s</div>
+                </div>
+                <div class="case-detail">
+                    <div class="detail-section">
+                        <div class="detail-label">前置条件</div>
+                        <div class="detail-content">已登录系统，具有首页视图/首页/用户基本信息相关操作权限</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">测试步骤</div>
+                        <ul class="steps-list">
+                            <li>登录系统，进入首页视�?首页/用户基本信息页面</li>
+                            <li>查看用户基本信息信息</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">预期结果</div>
+                        <ul class="expected-list">
+                            <li>信息正确显示</li>
+                            <li>数据内容完整</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">实际结果</div>
+                        <div class="detail-content" style="color: #38a169; font-weight: 500;">�?通过 �?用户基本信息正确显示：组织机构、IP地址、密码到期日</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">验证详情</div>
+                        <div class="detail-content">
+                            <p>�?组织机构: 根组�?/p>
+                            <p>�?IP地址: 10.28.100.122</p>
+                            <p>�?密码到期�? 2099-12-08</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 测试截图 �?用户基本信息与公告区�?/div>
+                        <img class="screenshot-img" src="tc-0003-user-info-tc-0004-notice.png" alt="TC-0003 Screenshot" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:20px;text-align:center;color:#a0aec0\'>截图文件: tc-0003-user-info-tc-0004-notice.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TC-0004 -->
+            <div class="test-case">
+                <div class="case-header" onclick="toggleDetail(this)">
+                    <div class="status-icon pass">�?/div>
+                    <div class="case-info">
+                        <div class="case-title">TC-0004: 验证查看公告功能正常可用</div>
+                        <div class="case-meta">首页视图/首页/公告 | 优先�? �?| 场景�?/div>
+                    </div>
+                    <div class="case-duration">~1s</div>
+                </div>
+                <div class="case-detail">
+                    <div class="detail-section">
+                        <div class="detail-label">前置条件</div>
+                        <div class="detail-content">已登录系统，具有首页视图/首页/公告相关操作权限</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">测试步骤</div>
+                        <ul class="steps-list">
+                            <li>登录系统，进入首页视�?首页/公告页面</li>
+                            <li>查看公告信息</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">预期结果</div>
+                        <ul class="expected-list">
+                            <li>信息正确显示</li>
+                            <li>数据内容完整</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">实际结果</div>
+                        <div class="detail-content" style="color: #38a169; font-weight: 500;">�?通过 �?公告区域正确显示，当前无公告数据</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">验证详情</div>
+                        <div class="detail-content">
+                            <p>�?公告区域标题正确显示</p>
+                            <p>�?公告内容区域正确显示</p>
+                            <p>�?当前显示"暂无数据"（符合预期）</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 测试截图 �?公告区域（与TC-0003同页面）</div>
+                        <img class="screenshot-img" src="tc-0003-user-info-tc-0004-notice.png" alt="TC-0004 Screenshot" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:20px;text-align:center;color:#a0aec0\'>截图文件: tc-0003-user-info-tc-0004-notice.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TC-0005 -->
+            <div class="test-case">
+                <div class="case-header" onclick="toggleDetail(this)">
+                    <div class="status-icon pass">�?/div>
+                    <div class="case-info">
+                        <div class="case-title">TC-0005: 验证更多公告功能正常可用</div>
+                        <div class="case-meta">首页视图/首页/公告 | 优先�? �?| 场景�?/div>
+                    </div>
+                    <div class="case-duration">~4s</div>
+                </div>
+                <div class="case-detail">
+                    <div class="detail-section">
+                        <div class="detail-label">前置条件</div>
+                        <div class="detail-content">已登录系统，具有首页视图/首页/公告相关操作权限</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">测试步骤</div>
+                        <ul class="steps-list">
+                            <li>登录系统，进入首页视�?首页/公告页面</li>
+                            <li>执行「更多公告」操�?/li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">预期结果</div>
+                        <ul class="expected-list">
+                            <li>更多公告功能正常执行</li>
+                            <li>操作结果符合预期</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">实际结果</div>
+                        <div class="detail-content" style="color: #38a169; font-weight: 500;">�?通过 �?点击更多按钮成功跳转到公告信息完整列表页�?/div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-label">验证详情</div>
+                        <div class="detail-content">
+                            <p>�?页面标题: AIS-IAM - 公告信息</p>
+                            <p>�?完整公告列表展示: 公告标题、重要级别、公告类型、生效时�?/p>
+                            <p>�?搜索�?请输入公告标�?功能正常</p>
+                            <p>�?筛选按钮正�?/p>
+                            <p>�?公告类型筛�?全部/未读/已读)功能正常</p>
+                            <p>�?分页显示�?�?/p>
+                        </div>
+                    </div>
+                    <div class="screenshot-container">
+                        <div class="screenshot-label">📸 测试截图 �?公告信息完整列表页面</div>
+                        <img class="screenshot-img" src="tc-0005-more-notice.png" alt="TC-0005 Screenshot" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:20px;text-align:center;color:#a0aec0\'>截图文件: tc-0005-more-notice.png</div>'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>🎭 Playwright Test Report | Generated: 2026-05-07 16:15 UTC+8 | AIS-IAM System v1.0</p>
+        <p>Test Environment: http://10.28.149.50:9432 | Browser: Chromium | Account: admin</p>
+    </div>
+
+    <script>
+        function toggleSuite(header) {
+            const suite = header.parentElement;
+            const cases = suite.querySelectorAll('.test-case');
+            cases.forEach(c => {
+                c.style.display = c.style.display === 'none' ? '' : 'none';
+            });
+        }
+
+        function toggleDetail(header) {
+            const detail = header.nextElementSibling;
+            detail.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
